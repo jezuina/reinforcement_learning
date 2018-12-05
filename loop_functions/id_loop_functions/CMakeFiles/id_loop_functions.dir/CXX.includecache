@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jkoroveshi/argos3-examples-master/loop_functions/id_loop_functions/id_loop_functions_automoc.cpp
+
+/home/jkoroveshi/argos3-examples-master/loop_functions/id_loop_functions/id_qtuser_functions.cpp
+id_qtuser_functions.h
+/home/jkoroveshi/argos3-examples-master/loop_functions/id_loop_functions/id_qtuser_functions.h
+
+/home/jkoroveshi/argos3-examples-master/loop_functions/id_loop_functions/id_qtuser_functions.h
+argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_user_functions.h
+-
+argos3/plugins/robots/foot-bot/simulator/footbot_entity.h
+-
+

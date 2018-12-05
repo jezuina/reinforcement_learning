@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>argos3_examples-Debug@argos3-examples-master</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.make.core.makeBuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+				<dictionary>
+					<key>org.eclipse.cdt.core.errorOutputParser</key>
+					<value>org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.append_environment</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.autoBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.arguments</key>
+					<value>-j4</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.command</key>
+					<value>/usr/bin/make</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.location</key>
+					<value>/home/jkoroveshi/argos3-examples-master</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.auto</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.clean</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.inc</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildArguments</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildLocation</key>
+					<value>/home/jkoroveshi/argos3-examples-master</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.contents</key>
+					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableCleanBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableFullBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enabledIncrementalBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.environment</key>
+					<value>VERBOSE=1|CMAKE_NO_VERBOSE=1|</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.fullBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.stopOnError</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
+					<value>false</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.make.core.ScannerConfigBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.make.core.makeNature</nature>
+		<nature>org.eclipse.cdt.make.core.ScannerConfigNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>[Subprojects]</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mpga_phototaxis/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] custom_distributions_loop_functions/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] epuck_obstacleavoidance/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_circle/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_flocking/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_diffusion/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_flocking/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_foraging/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_gripping/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_manualcontrol/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_synchronization/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] foraging_loop_functions/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] id_loop_functions/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] manualcontrol_loop_functions/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga_phototaxis_loop_functions/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] obstacle_avoidance_path_finding/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] trajectory_loop_functions/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mpga_phototaxis/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mpga_phototaxis/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mpga_phototaxis/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mpga_phototaxis/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mpga_phototaxis/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] custom_distributions_loop_functions/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] custom_distributions_loop_functions/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] custom_distributions_loop_functions/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] custom_distributions_loop_functions/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] custom_distributions_loop_functions/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] epuck_obstacleavoidance/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] epuck_obstacleavoidance/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] epuck_obstacleavoidance/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] epuck_obstacleavoidance/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] epuck_obstacleavoidance/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_circle/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_circle/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_circle/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_circle/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_circle/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_flocking/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_flocking/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_flocking/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_flocking/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_flocking/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_diffusion/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_diffusion/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_diffusion/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_diffusion/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_diffusion/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_flocking/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_flocking/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_flocking/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_flocking/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_flocking/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_foraging/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_foraging/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_foraging/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_foraging/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_foraging/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_gripping/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_gripping/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_gripping/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_gripping/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_gripping/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_manualcontrol/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_manualcontrol/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_manualcontrol/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_manualcontrol/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_manualcontrol/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_synchronization/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_synchronization/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_synchronization/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_synchronization/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_synchronization/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] foraging_loop_functions/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] foraging_loop_functions/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] foraging_loop_functions/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] foraging_loop_functions/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] foraging_loop_functions/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] id_loop_functions/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] id_loop_functions/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] id_loop_functions/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] id_loop_functions/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] id_loop_functions/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] manualcontrol_loop_functions/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] manualcontrol_loop_functions/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] manualcontrol_loop_functions/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] manualcontrol_loop_functions/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] manualcontrol_loop_functions/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga_phototaxis_loop_functions/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga_phototaxis_loop_functions/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga_phototaxis_loop_functions/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga_phototaxis_loop_functions/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga_phototaxis_loop_functions/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] obstacle_avoidance_path_finding/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] obstacle_avoidance_path_finding/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] obstacle_avoidance_path_finding/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] obstacle_avoidance_path_finding/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] obstacle_avoidance_path_finding/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] trajectory_loop_functions/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] trajectory_loop_functions/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] trajectory_loop_functions/Object Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] trajectory_loop_functions/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] trajectory_loop_functions/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mpga_phototaxis/Source Files/main.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/embedding/mpga/main.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mpga_phototaxis/Source Files/mpga_phototaxis_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/embedding/mpga/mpga_phototaxis_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] custom_distributions_loop_functions/Header Files/custom_distributions_loop_functions.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions/custom_distributions_loop_functions.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] custom_distributions_loop_functions/Source Files/custom_distributions_loop_functions.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions/custom_distributions_loop_functions.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] custom_distributions_loop_functions/Source Files/custom_distributions_loop_functions_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions/custom_distributions_loop_functions_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] epuck_obstacleavoidance/Header Files/epuck_obstacleavoidance.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/epuck_obstacleavoidance/epuck_obstacleavoidance.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] epuck_obstacleavoidance/Source Files/epuck_obstacleavoidance.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/epuck_obstacleavoidance/epuck_obstacleavoidance.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] epuck_obstacleavoidance/Source Files/epuck_obstacleavoidance_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/epuck_obstacleavoidance/epuck_obstacleavoidance_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_circle/Header Files/eyebot_circle.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/eyebot_circle/eyebot_circle.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_circle/Header Files/footbot_circle.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/eyebot_circle/footbot_circle.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_circle/Source Files/eyebot_circle.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/eyebot_circle/eyebot_circle.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_circle/Source Files/eyebot_circle_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/eyebot_circle/eyebot_circle_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_circle/Source Files/footbot_circle.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/eyebot_circle/footbot_circle.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_flocking/Header Files/eyebot_flocking.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/eyebot_flocking/eyebot_flocking.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_flocking/Source Files/eyebot_flocking.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/eyebot_flocking/eyebot_flocking.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] eyebot_flocking/Source Files/eyebot_flocking_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/eyebot_flocking/eyebot_flocking_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_diffusion/Header Files/footbot_diffusion.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_diffusion/footbot_diffusion.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_diffusion/Source Files/footbot_diffusion.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_diffusion/footbot_diffusion.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_diffusion/Source Files/footbot_diffusion_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_diffusion/footbot_diffusion_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_flocking/Header Files/footbot_flocking.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_flocking/footbot_flocking.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_flocking/Source Files/footbot_flocking.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_flocking/footbot_flocking.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_flocking/Source Files/footbot_flocking_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_flocking/footbot_flocking_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_foraging/Header Files/footbot_foraging.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_foraging/footbot_foraging.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_foraging/Source Files/footbot_foraging.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_foraging/footbot_foraging.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_foraging/Source Files/footbot_foraging_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_foraging/footbot_foraging_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_gripping/Header Files/footbot_gripping.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_gripping/footbot_gripping.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_gripping/Source Files/footbot_gripping.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_gripping/footbot_gripping.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_gripping/Source Files/footbot_gripping_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_gripping/footbot_gripping_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_manualcontrol/Header Files/footbot_manualcontrol.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_manualcontrol/footbot_manualcontrol.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_manualcontrol/Source Files/footbot_manualcontrol.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_manualcontrol/footbot_manualcontrol.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_manualcontrol/Source Files/footbot_manualcontrol_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_manualcontrol/footbot_manualcontrol_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Header Files/ctrnn_multilayer.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/ctrnn_multilayer.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Header Files/footbot_nn_controller.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/footbot_nn_controller.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Header Files/neural_network.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/neural_network.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Header Files/perceptron.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/perceptron.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Source Files/ctrnn_multilayer.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/ctrnn_multilayer.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Source Files/footbot_nn_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/footbot_nn_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Source Files/footbot_nn_controller.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/footbot_nn_controller.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Source Files/neural_network.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/neural_network.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_nn/Source Files/perceptron.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/perceptron.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_synchronization/Header Files/footbot_synchronization.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_synchronization/Source Files/footbot_synchronization.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] footbot_synchronization/Source Files/footbot_synchronization_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] foraging_loop_functions/Source Files/foraging_loop_functions.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/foraging_loop_functions/foraging_loop_functions.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] foraging_loop_functions/Source Files/foraging_loop_functions_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/foraging_loop_functions/foraging_loop_functions_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] foraging_loop_functions/Source Files/foraging_qt_user_functions.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/foraging_loop_functions/foraging_qt_user_functions.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] id_loop_functions/Header Files/id_qtuser_functions.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/id_loop_functions/id_qtuser_functions.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] id_loop_functions/Source Files/id_loop_functions_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/id_loop_functions/id_loop_functions_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] id_loop_functions/Source Files/id_qtuser_functions.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/id_loop_functions/id_qtuser_functions.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] manualcontrol_loop_functions/Header Files/manualcontrol_qtuser_functions.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/manualcontrol_loop_functions/manualcontrol_qtuser_functions.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] manualcontrol_loop_functions/Source Files/manualcontrol_loop_functions_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/manualcontrol_loop_functions/manualcontrol_loop_functions_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] manualcontrol_loop_functions/Source Files/manualcontrol_qtuser_functions.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/manualcontrol_loop_functions/manualcontrol_qtuser_functions.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga/Header Files/mpga.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/mpga_loop_functions/mpga.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga/Header Files/mpga_loop_functions.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/mpga_loop_functions/mpga_loop_functions.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga/Source Files/mpga.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/mpga_loop_functions/mpga.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga/Source Files/mpga_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/mpga_loop_functions/mpga_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga/Source Files/mpga_loop_functions.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/mpga_loop_functions/mpga_loop_functions.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga_phototaxis_loop_functions/Header Files/mpga_phototaxis_loop_functions.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/mpga_loop_functions/mpga_phototaxis_loop_functions.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga_phototaxis_loop_functions/Source Files/mpga_phototaxis_loop_functions.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/mpga_loop_functions/mpga_phototaxis_loop_functions.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] mpga_phototaxis_loop_functions/Source Files/mpga_phototaxis_loop_functions_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/mpga_loop_functions/mpga_phototaxis_loop_functions_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] obstacle_avoidance_path_finding/Header Files/obstacle_avoidance_path_finding.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] obstacle_avoidance_path_finding/Source Files/obstacle_avoidance_path_finding.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] obstacle_avoidance_path_finding/Source Files/obstacle_avoidance_path_finding_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] trajectory_loop_functions/Header Files/trajectory_loop_functions.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] trajectory_loop_functions/Header Files/trajectory_qtuser_functions.h</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_qtuser_functions.h</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] trajectory_loop_functions/Source Files/trajectory_loop_functions.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] trajectory_loop_functions/Source Files/trajectory_loop_functions_automoc.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions_automoc.cpp</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] trajectory_loop_functions/Source Files/trajectory_qtuser_functions.cpp</name>
+			<type>1</type>
+			<location>/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_qtuser_functions.cpp</location>
+		</link>
+	</linkedResources>
+</projectDescription>

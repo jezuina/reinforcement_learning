@@ -1,0 +1,2 @@
+/usr/bin/ar qc libargos3.a  CMakeFiles/argos3.dir/argos3_automoc.cpp.o
+/usr/bin/ranlib libargos3.a

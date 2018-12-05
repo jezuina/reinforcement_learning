@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/argos3.dir/argos3_automoc.cpp.o  -o argos3 -rdynamic -lpython2.7 
