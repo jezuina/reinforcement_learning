@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "obstacle_avoidance_path_finding_automoc.cpp"
   "CMakeFiles/obstacle_avoidance_path_finding.dir/obstacle_avoidance_path_finding.cpp.o"
+  "CMakeFiles/obstacle_avoidance_path_finding.dir/ObjectTrackingNeuralNetwork.cpp.o"
   "CMakeFiles/obstacle_avoidance_path_finding.dir/obstacle_avoidance_path_finding_automoc.cpp.o"
   "libobstacle_avoidance_path_finding.pdb"
   "libobstacle_avoidance_path_finding.so"

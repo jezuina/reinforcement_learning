@@ -39,6 +39,7 @@
 #include <argos3/core/simulator/loop_functions.h>
 #include <argos3/plugins/robots/foot-bot/simulator/footbot_entity.h>
 #include </usr/include/python2.7/Python.h>
+#include "ObjectTrackingNeuralNetwork.h"
 /*
  * All the ARGoS stuff in the 'argos' namespace.
  * With this statement, you save typing argos:: every time.
@@ -52,6 +53,7 @@ class CObstacleAvoidance : public CCI_Controller {
 
 public:
 
+	ObjectTrackingNeuralNetwork *otnn;
    /* Class constructor. */
    CObstacleAvoidance();
 
@@ -98,10 +100,13 @@ public:
 
    virtual int GetReward();
 
+   virtual void remember();
+
    virtual void GetState(Real state[]);
    /* Pointer to the positioning sensor */
      CCI_PositioningSensor* m_pcPosSens;
 private:
+
 
    int numberOfSteps;
    /* Pointer to the differential steering actuator */

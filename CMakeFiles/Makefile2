@@ -1013,7 +1013,7 @@ controllers/obstacle_avoidance_path_finding/preinstall:
 controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/all: controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding_automoc.dir/all
 	$(MAKE) -f controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/build.make controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/depend
 	$(MAKE) -f controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/build.make controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=79,80,81 "Built target obstacle_avoidance_path_finding"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=79,80,81,82 "Built target obstacle_avoidance_path_finding"
 .PHONY : controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/all
 
 # Include target in all.
@@ -1023,7 +1023,7 @@ all: controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_p
 
 # Build rule for subdir invocation for target.
 controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles 0
 .PHONY : controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/rule
@@ -1050,7 +1050,7 @@ clean: controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance
 controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding_automoc.dir/all:
 	$(MAKE) -f controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding_automoc.dir/build.make controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding_automoc.dir/depend
 	$(MAKE) -f controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding_automoc.dir/build.make controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding_automoc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=82 "Built target obstacle_avoidance_path_finding_automoc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=83 "Built target obstacle_avoidance_path_finding_automoc"
 .PHONY : controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding_automoc.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1564,7 +1564,7 @@ loop_functions/trajectory_loop_functions/preinstall:
 loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions.dir/all: loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions_automoc.dir/all
 	$(MAKE) -f loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions.dir/build.make loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions.dir/depend
 	$(MAKE) -f loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions.dir/build.make loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=83,84,85,86 "Built target trajectory_loop_functions"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=84,85,86,87 "Built target trajectory_loop_functions"
 .PHONY : loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions.dir/all
 
 # Include target in all.
@@ -1601,7 +1601,7 @@ clean: loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_funct
 loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions_automoc.dir/all:
 	$(MAKE) -f loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions_automoc.dir/build.make loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions_automoc.dir/depend
 	$(MAKE) -f loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions_automoc.dir/build.make loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions_automoc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=87 "Built target trajectory_loop_functions_automoc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=88 "Built target trajectory_loop_functions_automoc"
 .PHONY : loop_functions/trajectory_loop_functions/CMakeFiles/trajectory_loop_functions_automoc.dir/all
 
 # Build rule for subdir invocation for target.

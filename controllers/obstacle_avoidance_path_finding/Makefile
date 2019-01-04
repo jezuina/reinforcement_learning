@@ -140,6 +140,33 @@ obstacle_avoidance_path_finding_automoc/fast:
 	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master && $(MAKE) -f controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding_automoc.dir/build.make controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding_automoc.dir/build
 .PHONY : obstacle_avoidance_path_finding_automoc/fast
 
+ObjectTrackingNeuralNetwork.o: ObjectTrackingNeuralNetwork.cpp.o
+
+.PHONY : ObjectTrackingNeuralNetwork.o
+
+# target to build an object file
+ObjectTrackingNeuralNetwork.cpp.o:
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master && $(MAKE) -f controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/build.make controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/ObjectTrackingNeuralNetwork.cpp.o
+.PHONY : ObjectTrackingNeuralNetwork.cpp.o
+
+ObjectTrackingNeuralNetwork.i: ObjectTrackingNeuralNetwork.cpp.i
+
+.PHONY : ObjectTrackingNeuralNetwork.i
+
+# target to preprocess a source file
+ObjectTrackingNeuralNetwork.cpp.i:
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master && $(MAKE) -f controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/build.make controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/ObjectTrackingNeuralNetwork.cpp.i
+.PHONY : ObjectTrackingNeuralNetwork.cpp.i
+
+ObjectTrackingNeuralNetwork.s: ObjectTrackingNeuralNetwork.cpp.s
+
+.PHONY : ObjectTrackingNeuralNetwork.s
+
+# target to generate assembly for a file
+ObjectTrackingNeuralNetwork.cpp.s:
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master && $(MAKE) -f controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/build.make controllers/obstacle_avoidance_path_finding/CMakeFiles/obstacle_avoidance_path_finding.dir/ObjectTrackingNeuralNetwork.cpp.s
+.PHONY : ObjectTrackingNeuralNetwork.cpp.s
+
 obstacle_avoidance_path_finding.o: obstacle_avoidance_path_finding.cpp.o
 
 .PHONY : obstacle_avoidance_path_finding.o
@@ -204,6 +231,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... obstacle_avoidance_path_finding"
 	@echo "... obstacle_avoidance_path_finding_automoc"
+	@echo "... ObjectTrackingNeuralNetwork.o"
+	@echo "... ObjectTrackingNeuralNetwork.i"
+	@echo "... ObjectTrackingNeuralNetwork.s"
 	@echo "... obstacle_avoidance_path_finding.o"
 	@echo "... obstacle_avoidance_path_finding.i"
 	@echo "... obstacle_avoidance_path_finding.s"

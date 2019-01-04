@@ -100,9 +100,13 @@ void CObjectTrackingLoopFunctions::PostStep() {
 				  CFootBotEntity& cFootBot = *any_cast<CFootBotEntity*>(it->second);
 
 				  std::string id = cFootBot.GetId();
+				  std::cout<<"id "<<id<<std::endl;
 				  if(id == "fb_1")//ky eshte foot-boti qe po trajnohet
 				  {
 					  CObstacleAvoidance& cController = dynamic_cast<CObstacleAvoidance&>(cFootBot.GetControllableEntity().GetController());
+
+					  std::cout<<"calling remember"<<std::endl;
+					  cController.remember();
 
 					  if(cController.IsEpisodeFinished() == true)
 					  {

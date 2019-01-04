@@ -466,6 +466,14 @@ controllers/footbot_nn/nn/perceptron.h
 neural_network.h
 controllers/footbot_nn/nn/neural_network.h
 
+controllers/obstacle_avoidance_path_finding/ObjectTrackingNeuralNetwork.h
+/usr/include/python2.7/Python.h
+-
+iostream
+-
+vector
+-
+
 controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding.h
 argos3/core/control_interface/ci_controller.h
 -
@@ -487,4 +495,6 @@ argos3/plugins/robots/foot-bot/simulator/footbot_entity.h
 -
 /usr/include/python2.7/Python.h
 -
+ObjectTrackingNeuralNetwork.h
+controllers/obstacle_avoidance_path_finding/ObjectTrackingNeuralNetwork.h
 

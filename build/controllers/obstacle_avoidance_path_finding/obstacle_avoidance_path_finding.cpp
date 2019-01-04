@@ -26,6 +26,7 @@ CObstacleAvoidance::CObstacleAvoidance() :
 
 
 	numberOfSteps = 0;
+	otnn = new ObjectTrackingNeuralNetwork;
 }
 
 /****************************************/
@@ -86,7 +87,7 @@ void CObstacleAvoidance::Init(TConfigurationNode& t_node) {
    //python
 
 
-   Py_Initialize();
+   /*Py_Initialize();
    char *args[1] = {"/home/jkoroveshi/eclipse-workspace/PythonEmbedding/Debug/PythonEmbedding"};
    PySys_SetArgv(1,args); // must call this to get sys.argv and relative imports
 
@@ -96,7 +97,7 @@ void CObstacleAvoidance::Init(TConfigurationNode& t_node) {
       				  "print sys.argv, \"\\n\".join(sys.path)\n"
       			      "print os.getcwd()\n"
       			      "import numpy\n" // import a relative module
-      			     );
+      			     );*/
 
 
    //pName = PyString_FromString("clasifyNumbers");
@@ -148,7 +149,7 @@ void CObstacleAvoidance::ControlStep() {
     }
     CRadians cAngle = cAccum.Angle();
     Real cValue = cAccum.Length();
-    std::cout << "gjetesia rezultat camera7777"<<cValue<<std::endl;
+    std::cout << "gjetesia rezultat camera777"<<cValue<<std::endl;
     std::cout << "kendi rezultat camera"<<cAngle<<std::endl;
 
 
@@ -203,6 +204,7 @@ void CObstacleAvoidance::ControlStep() {
 
    numberOfSteps ++;
 
+   //remember();
 }
 
 void CObstacleAvoidance::Reset() {
@@ -261,6 +263,19 @@ int CObstacleAvoidance::GetReward()
 			return 1;
 		else return 0;
 }
+
+
+void CObstacleAvoidance::remember()
+{
+   double state[] = {1,2,3,4,5,6,7,8,9,10};
+   int action = 1;
+   int reward = 1;
+   double new_state[] = {11,12,13,14,15,16,17,18,19,20};
+   bool done = false;
+
+   otnn->callMethodRemember(state,action,reward,new_state,done,10);
+}
+
 
 void CObstacleAvoidance::GetState(Real state[])
 {

@@ -6,6 +6,24 @@
 
 #IncludeRegexTransform: 
 
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/obstacle_avoidance_path_finding/ObjectTrackingNeuralNetwork.cpp
+/usr/include/python2.7/Python.h
+-
+iostream
+-
+vector
+-
+ObjectTrackingNeuralNetwork.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/obstacle_avoidance_path_finding/ObjectTrackingNeuralNetwork.h
+
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/obstacle_avoidance_path_finding/ObjectTrackingNeuralNetwork.h
+/usr/include/python2.7/Python.h
+-
+iostream
+-
+vector
+-
+
 /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding.cpp
 /usr/include/python2.7/Python.h
 -
@@ -37,6 +55,8 @@ argos3/plugins/robots/foot-bot/simulator/footbot_entity.h
 -
 /usr/include/python2.7/Python.h
 -
+ObjectTrackingNeuralNetwork.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/obstacle_avoidance_path_finding/ObjectTrackingNeuralNetwork.h
 
 /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding_automoc.cpp
 
