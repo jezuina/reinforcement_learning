@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jkoroveshi/argos3-examples-master
+CMAKE_SOURCE_DIR = /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jkoroveshi/argos3-examples-master
+CMAKE_BINARY_DIR = /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master
 
 # Utility rule file for eyebot_circle_automoc.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/jkoroveshi/argos3-examples-master
 include controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/progress.make
 
 controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jkoroveshi/argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target eyebot_circle"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/eyebot_circle && /usr/bin/cmake -E cmake_autogen /home/jkoroveshi/argos3-examples-master/controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/ Release
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target eyebot_circle"
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/eyebot_circle && /usr/bin/cmake -E cmake_autogen /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/ Debug
 
 eyebot_circle_automoc: controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc
 eyebot_circle_automoc: controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/build.make
@@ -68,10 +68,10 @@ controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/build: eyebot_cir
 .PHONY : controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/build
 
 controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/clean:
-	cd /home/jkoroveshi/argos3-examples-master/controllers/eyebot_circle && $(CMAKE_COMMAND) -P CMakeFiles/eyebot_circle_automoc.dir/cmake_clean.cmake
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/eyebot_circle && $(CMAKE_COMMAND) -P CMakeFiles/eyebot_circle_automoc.dir/cmake_clean.cmake
 .PHONY : controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/clean
 
 controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/depend:
-	cd /home/jkoroveshi/argos3-examples-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jkoroveshi/argos3-examples-master /home/jkoroveshi/argos3-examples-master/controllers/eyebot_circle /home/jkoroveshi/argos3-examples-master /home/jkoroveshi/argos3-examples-master/controllers/eyebot_circle /home/jkoroveshi/argos3-examples-master/controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/eyebot_circle /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/eyebot_circle /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : controllers/eyebot_circle/CMakeFiles/eyebot_circle_automoc.dir/depend
 

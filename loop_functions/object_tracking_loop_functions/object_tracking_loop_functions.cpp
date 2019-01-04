@@ -61,7 +61,7 @@ void CObjectTrackingLoopFunctions::Init(TConfigurationNode& t_tree) {
 	   CQuaternion cFBRot;
 
 	   /* Choose a random position */
-	   cFBPos.Set(0, 0.2, 0.0f);
+	   cFBPos.Set(0, 0.0001, 0.0f);
 	   CRadians r = CRadians(0);
 	   cFBRot.FromAngleAxis(r, CVector3::Z);
 	   bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
@@ -113,7 +113,7 @@ void CObjectTrackingLoopFunctions::PostStep() {
 						 	   CQuaternion cFBRot;
 
 						 	   /* Choose a random position */
-						 	   cFBPos.Set(0, 0.2, 0.0f);
+						 	   cFBPos.Set(0, 0.00001, 0.0f);
 						 	   CRadians r = CRadians(0);
 						 	   cFBRot.FromAngleAxis(r, CVector3::Z);
 						 	   bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);

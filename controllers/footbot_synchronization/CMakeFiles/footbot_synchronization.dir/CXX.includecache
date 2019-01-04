@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/jkoroveshi/argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization.cpp
 footbot_synchronization.h
-/home/jkoroveshi/argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization.h
 
-/home/jkoroveshi/argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization.h
 argos3/core/control_interface/ci_controller.h
 -
 argos3/plugins/robots/generic/control_interface/ci_leds_actuator.h
@@ -20,5 +20,5 @@ argos3/plugins/robots/generic/control_interface/ci_colored_blob_omnidirectional_
 argos3/core/utility/math/rng.h
 -
 
-/home/jkoroveshi/argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization_automoc.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization_automoc.cpp
 

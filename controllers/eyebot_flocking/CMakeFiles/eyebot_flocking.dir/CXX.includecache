@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/jkoroveshi/argos3-examples-master/controllers/eyebot_flocking/eyebot_flocking.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/eyebot_flocking/eyebot_flocking.cpp
 eyebot_flocking.h
-/home/jkoroveshi/argos3-examples-master/controllers/eyebot_flocking/eyebot_flocking.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/eyebot_flocking/eyebot_flocking.h
 argos3/core/utility/configuration/argos_configuration.h
 -
 argos3/core/utility/logging/argos_log.h
 -
 
-/home/jkoroveshi/argos3-examples-master/controllers/eyebot_flocking/eyebot_flocking.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/eyebot_flocking/eyebot_flocking.h
 argos3/core/control_interface/ci_controller.h
 -
 argos3/plugins/robots/generic/control_interface/ci_quadrotor_position_actuator.h
@@ -30,5 +30,5 @@ argos3/plugins/robots/generic/control_interface/ci_positioning_sensor.h
 argos3/core/utility/math/vector2.h
 -
 
-/home/jkoroveshi/argos3-examples-master/controllers/eyebot_flocking/eyebot_flocking_automoc.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/eyebot_flocking/eyebot_flocking_automoc.cpp
 

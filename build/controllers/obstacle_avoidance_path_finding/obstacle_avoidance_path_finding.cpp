@@ -111,7 +111,7 @@ void CObstacleAvoidance::ControlStep() {
 
 	//lexohen te dhenat e sensorit te drites
 	/* Get light readings */
-	const CCI_FootBotLightSensor::TReadings& tReadings = m_pcLight->GetReadings();
+	//const CCI_FootBotLightSensor::TReadings& tReadings = m_pcLight->GetReadings();
 	/* Calculate a normalized vector that points to the closest light */
 	//CVector2 cAccum;
 	//for(size_t i = 0; i < tReadings.size(); ++i) {
@@ -133,12 +133,13 @@ void CObstacleAvoidance::ControlStep() {
 	bool bSomeoneFlashed = false;
 	CVector2 cAccum;
 	for(size_t i = 0; ! bSomeoneFlashed && i < sBlobs.BlobList.size(); ++i) {
-		std::cout<<"color "<<sBlobs.BlobList[i]->Color<<std::endl;
+		//std::cout<<"color "<<sBlobs.BlobList[i]->Color<<std::endl;
 	    bSomeoneFlashed = (sBlobs.BlobList[i]->Color == CColor::RED);
-	    std::cout << "distanca "<<sBlobs.BlobList[i]->Distance<<std::endl;
-	    std::cout << "kendi "<<sBlobs.BlobList[i]->Angle<<std::endl;
-
+	    //std::cout << "distanca "<<sBlobs.BlobList[i]->Distance<<std::endl;
+	    //std::cout << "kendi "<<sBlobs.BlobList[i]->Angle<<std::endl;
 		cAccum = CVector2(sBlobs.BlobList[i]->Distance,sBlobs.BlobList[i]->Angle);
+
+		if(bSomeoneFlashed) break;
 	}
     if(bSomeoneFlashed)
     {
@@ -147,8 +148,8 @@ void CObstacleAvoidance::ControlStep() {
     }
     CRadians cAngle = cAccum.Angle();
     Real cValue = cAccum.Length();
-    std::cout << "gjetesia rezultat "<<cValue<<std::endl;
-    std::cout << "kendi rezultat "<<cAngle<<std::endl;
+    std::cout << "gjetesia rezultat camera7777"<<cValue<<std::endl;
+    std::cout << "kendi rezultat camera"<<cAngle<<std::endl;
 
 
 
@@ -157,25 +158,25 @@ void CObstacleAvoidance::ControlStep() {
 	std::string robotId = this->GetId();
 	//std::cout<<"id "<<robotId<<std::endl;
    /* Get readings from proximity sensor */
-   //const CCI_FootBotProximitySensor::TReadings& tProxReads = m_pcProximity->GetReadings();
+   const CCI_FootBotProximitySensor::TReadings& tProxReads = m_pcProximity->GetReadings();
    /* Sum them together */
-   //CVector2 cAccumulator;
-   //for(size_t i = 0; i < tProxReads.size(); ++i) {
-      //cAccumulator += CVector2(tProxReads[i].Value, tProxReads[i].Angle);
-     //if(tProxReads[i].Value != 0)
-     //{
+   CVector2 cAccumulatorProximity;
+   for(size_t i = 0; i < tProxReads.size(); ++i) {
+	 cAccumulatorProximity += CVector2(tProxReads[i].Value, tProxReads[i].Angle);
+     if(tProxReads[i].Value != 0)
+     {
       //std::cout<<"i "<<i<<std::endl;
       //std::cout << "vlera "<<tProxReads[i].Value<<std::endl;
       //std::cout << "kendi "<<tProxReads[i].Angle<<std::endl;
-     //}
-   //}
-   //cAccumulator /= tProxReads.size();
+     }
+   }
+   cAccumulatorProximity /= tProxReads.size();
    /* If the angle of the vector is small enough and the closest obstacle
     * is far enough, continue going straight, otherwise curve a little
     */
-   //CRadians cAngle = cAccumulator.Angle();
-   //Real cValue = cAccumulator.Length();
-   //std::cout << "gjetesia rezultat "<<cValue<<std::endl;
+   CRadians cAngleProximity = cAccumulatorProximity.Angle();
+   Real cValueProximity = cAccumulatorProximity.Length();
+   std::cout << "gjetesia rezultat proximity1111"<<cValueProximity<<std::endl;
 
 
    //if(cValue != 0)
@@ -235,6 +236,38 @@ bool CObstacleAvoidance::IsEpisodeFinished()
 	 else return false;
 }
 
+int CObstacleAvoidance::GetReward()
+{
+	//lexohen te dhenat nga sensori i afersise
+
+
+	    /* Get led color of nearby robots */
+		const CCI_ColoredBlobOmnidirectionalCameraSensor::SReadings& sBlobs = m_pcCamera->GetReadings();
+		/*
+		* Check whether someone sent a 1, which means 'flash'
+		*/
+		Real distanca =0;
+		bool bSomeoneFlashed = false;
+		CVector2 cAccum;
+		for(size_t i = 0; ! bSomeoneFlashed && i < sBlobs.BlobList.size(); ++i) {
+		    bSomeoneFlashed = (sBlobs.BlobList[i]->Color == CColor::RED);
+		    std::cout << "distanca "<<sBlobs.BlobList[i]->Distance<<std::endl;
+		    std::cout << "kendi "<<sBlobs.BlobList[i]->Angle<<std::endl;
+		    distanca = sBlobs.BlobList[i]->Distance;
+			cAccum = CVector2(sBlobs.BlobList[i]->Distance,sBlobs.BlobList[i]->Angle);
+		}
+
+		if(distanca < 20 && distanca != 0)
+			return 1;
+		else return 0;
+}
+
+void CObstacleAvoidance::GetState(Real state[])
+{
+
+//test
+//test2
+}
 /****************************************/
 /****************************************/
 

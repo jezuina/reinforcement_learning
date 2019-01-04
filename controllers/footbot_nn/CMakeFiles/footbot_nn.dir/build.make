@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jkoroveshi/argos3-examples-master
+CMAKE_SOURCE_DIR = /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jkoroveshi/argos3-examples-master
+CMAKE_BINARY_DIR = /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master
 
 # Include any dependencies generated for this target.
 include controllers/footbot_nn/CMakeFiles/footbot_nn.dir/depend.make
@@ -59,16 +59,16 @@ include controllers/footbot_nn/CMakeFiles/footbot_nn.dir/flags.make
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.o: controllers/footbot_nn/CMakeFiles/footbot_nn.dir/flags.make
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.o: controllers/footbot_nn/nn/neural_network.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jkoroveshi/argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.o"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.o -c /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/neural_network.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.o"
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.o -c /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/neural_network.cpp
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.i"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/neural_network.cpp > CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.i
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/neural_network.cpp > CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.i
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.s"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/neural_network.cpp -o CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.s
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/neural_network.cpp -o CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.s
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.o.requires:
 
@@ -83,16 +83,16 @@ controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.o.provide
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.o: controllers/footbot_nn/CMakeFiles/footbot_nn.dir/flags.make
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.o: controllers/footbot_nn/nn/perceptron.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jkoroveshi/argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.o"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.o -c /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/perceptron.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.o"
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.o -c /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/perceptron.cpp
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.i"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/perceptron.cpp > CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.i
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/perceptron.cpp > CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.i
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.s"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/perceptron.cpp -o CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.s
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/perceptron.cpp -o CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.s
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.o.requires:
 
@@ -107,16 +107,16 @@ controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.o.provides.bu
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.o: controllers/footbot_nn/CMakeFiles/footbot_nn.dir/flags.make
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.o: controllers/footbot_nn/nn/ctrnn_multilayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jkoroveshi/argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.o"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.o -c /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/ctrnn_multilayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.o"
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.o -c /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/ctrnn_multilayer.cpp
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.i"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/ctrnn_multilayer.cpp > CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.i
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/ctrnn_multilayer.cpp > CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.i
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.s"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/ctrnn_multilayer.cpp -o CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.s
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/ctrnn_multilayer.cpp -o CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.s
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.o.requires:
 
@@ -131,16 +131,16 @@ controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.o.provi
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.o: controllers/footbot_nn/CMakeFiles/footbot_nn.dir/flags.make
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.o: controllers/footbot_nn/footbot_nn_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jkoroveshi/argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.o"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.o -c /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/footbot_nn_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.o"
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.o -c /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/footbot_nn_controller.cpp
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.i"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/footbot_nn_controller.cpp > CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.i
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/footbot_nn_controller.cpp > CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.i
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.s"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/footbot_nn_controller.cpp -o CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.s
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/footbot_nn_controller.cpp -o CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.s
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.o.requires:
 
@@ -155,16 +155,16 @@ controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.o.pro
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.o: controllers/footbot_nn/CMakeFiles/footbot_nn.dir/flags.make
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.o: controllers/footbot_nn/footbot_nn_automoc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jkoroveshi/argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.o"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.o -c /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/footbot_nn_automoc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.o"
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.o -c /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/footbot_nn_automoc.cpp
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.i"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/footbot_nn_automoc.cpp > CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.i
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/footbot_nn_automoc.cpp > CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.i
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.s"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/footbot_nn_automoc.cpp -o CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.s
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/footbot_nn_automoc.cpp -o CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.s
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.o.requires:
 
@@ -195,8 +195,8 @@ controllers/footbot_nn/libfootbot_nn.so: controllers/footbot_nn/CMakeFiles/footb
 controllers/footbot_nn/libfootbot_nn.so: controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.o
 controllers/footbot_nn/libfootbot_nn.so: controllers/footbot_nn/CMakeFiles/footbot_nn.dir/build.make
 controllers/footbot_nn/libfootbot_nn.so: controllers/footbot_nn/CMakeFiles/footbot_nn.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jkoroveshi/argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library libfootbot_nn.so"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/footbot_nn.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library libfootbot_nn.so"
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/footbot_nn.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/build: controllers/footbot_nn/libfootbot_nn.so
@@ -212,10 +212,10 @@ controllers/footbot_nn/CMakeFiles/footbot_nn.dir/requires: controllers/footbot_n
 .PHONY : controllers/footbot_nn/CMakeFiles/footbot_nn.dir/requires
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/clean:
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn && $(CMAKE_COMMAND) -P CMakeFiles/footbot_nn.dir/cmake_clean.cmake
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn && $(CMAKE_COMMAND) -P CMakeFiles/footbot_nn.dir/cmake_clean.cmake
 .PHONY : controllers/footbot_nn/CMakeFiles/footbot_nn.dir/clean
 
 controllers/footbot_nn/CMakeFiles/footbot_nn.dir/depend:
-	cd /home/jkoroveshi/argos3-examples-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jkoroveshi/argos3-examples-master /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn /home/jkoroveshi/argos3-examples-master /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn /home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : controllers/footbot_nn/CMakeFiles/footbot_nn.dir/depend
 

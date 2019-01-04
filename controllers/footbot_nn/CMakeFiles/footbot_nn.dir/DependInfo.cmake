@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/footbot_nn_automoc.cpp" "/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.o"
-  "/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/footbot_nn_controller.cpp" "/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.o"
-  "/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/ctrnn_multilayer.cpp" "/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.o"
-  "/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/neural_network.cpp" "/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.o"
-  "/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/nn/perceptron.cpp" "/home/jkoroveshi/argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/footbot_nn_automoc.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_automoc.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/footbot_nn_controller.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/footbot_nn_controller.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/ctrnn_multilayer.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/ctrnn_multilayer.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/neural_network.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/neural_network.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/nn/perceptron.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_nn/CMakeFiles/footbot_nn.dir/nn/perceptron.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jkoroveshi/argos3-examples-master/controllers/footbot_flocking/footbot_flocking.cpp" "/home/jkoroveshi/argos3-examples-master/controllers/footbot_flocking/CMakeFiles/footbot_flocking.dir/footbot_flocking.cpp.o"
-  "/home/jkoroveshi/argos3-examples-master/controllers/footbot_flocking/footbot_flocking_automoc.cpp" "/home/jkoroveshi/argos3-examples-master/controllers/footbot_flocking/CMakeFiles/footbot_flocking.dir/footbot_flocking_automoc.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_flocking/footbot_flocking.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_flocking/CMakeFiles/footbot_flocking.dir/footbot_flocking.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_flocking/footbot_flocking_automoc.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_flocking/CMakeFiles/footbot_flocking.dir/footbot_flocking_automoc.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

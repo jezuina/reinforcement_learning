@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/jkoroveshi/argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding.cpp
 /usr/include/python2.7/Python.h
 -
 obstacle_avoidance_path_finding.h
-/home/jkoroveshi/argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding.h
 argos3/core/utility/configuration/argos_configuration.h
 -
 argos3/core/utility/math/vector2.h
 -
 
-/home/jkoroveshi/argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding.h
 argos3/core/control_interface/ci_controller.h
 -
 argos3/plugins/robots/generic/control_interface/ci_differential_steering_actuator.h
@@ -38,7 +38,7 @@ argos3/plugins/robots/foot-bot/simulator/footbot_entity.h
 /usr/include/python2.7/Python.h
 -
 
-/home/jkoroveshi/argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding_automoc.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/obstacle_avoidance_path_finding/obstacle_avoidance_path_finding_automoc.cpp
 
 /usr/include/python2.7/Python.h
 patchlevel.h

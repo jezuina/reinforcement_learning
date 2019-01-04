@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/foraging_loop_functions/foraging_loop_functions.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/foraging_loop_functions/foraging_loop_functions.cpp
 foraging_loop_functions.h
-/home/jkoroveshi/argos3-examples-master/loop_functions/foraging_loop_functions/foraging_loop_functions.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/foraging_loop_functions/foraging_loop_functions.h
 argos3/core/simulator/simulator.h
 -
 argos3/core/utility/configuration/argos_configuration.h
@@ -18,7 +18,7 @@ argos3/plugins/robots/foot-bot/simulator/footbot_entity.h
 controllers/footbot_foraging/footbot_foraging.h
 -
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/foraging_loop_functions/foraging_loop_functions.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/foraging_loop_functions/foraging_loop_functions.h
 argos3/core/simulator/loop_functions.h
 -
 argos3/core/simulator/entity/floor_entity.h
@@ -28,17 +28,17 @@ argos3/core/utility/math/range.h
 argos3/core/utility/math/rng.h
 -
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/foraging_loop_functions/foraging_loop_functions_automoc.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/foraging_loop_functions/foraging_loop_functions_automoc.cpp
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/foraging_loop_functions/foraging_qt_user_functions.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/foraging_loop_functions/foraging_qt_user_functions.cpp
 foraging_qt_user_functions.h
-/home/jkoroveshi/argos3-examples-master/loop_functions/foraging_loop_functions/foraging_qt_user_functions.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/foraging_loop_functions/foraging_qt_user_functions.h
 controllers/footbot_foraging/footbot_foraging.h
 -
 argos3/core/simulator/entity/controllable_entity.h
 -
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/foraging_loop_functions/foraging_qt_user_functions.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/foraging_loop_functions/foraging_qt_user_functions.h
 argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_user_functions.h
 -
 argos3/plugins/robots/foot-bot/simulator/footbot_entity.h

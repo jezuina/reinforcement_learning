@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jkoroveshi/argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization.cpp" "/home/jkoroveshi/argos3-examples-master/controllers/footbot_synchronization/CMakeFiles/footbot_synchronization.dir/footbot_synchronization.cpp.o"
-  "/home/jkoroveshi/argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization_automoc.cpp" "/home/jkoroveshi/argos3-examples-master/controllers/footbot_synchronization/CMakeFiles/footbot_synchronization.dir/footbot_synchronization_automoc.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_synchronization/CMakeFiles/footbot_synchronization.dir/footbot_synchronization.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_synchronization/footbot_synchronization_automoc.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_synchronization/CMakeFiles/footbot_synchronization.dir/footbot_synchronization_automoc.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -6,25 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions.cpp
 trajectory_loop_functions.h
-/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions.h
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions.h
 argos3/core/simulator/loop_functions.h
 -
 argos3/plugins/robots/foot-bot/simulator/footbot_entity.h
 -
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions_automoc.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions_automoc.cpp
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_qtuser_functions.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_qtuser_functions.cpp
 trajectory_qtuser_functions.h
-/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_qtuser_functions.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_qtuser_functions.h
 trajectory_loop_functions.h
-/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_loop_functions.h
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_qtuser_functions.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/trajectory_loop_functions/trajectory_qtuser_functions.h
 argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_user_functions.h
 -
 argos3/plugins/robots/foot-bot/simulator/footbot_entity.h

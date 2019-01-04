@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/jkoroveshi/argos3-examples-master/controllers/epuck_obstacleavoidance/epuck_obstacleavoidance.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/epuck_obstacleavoidance/epuck_obstacleavoidance.cpp
 epuck_obstacleavoidance.h
-/home/jkoroveshi/argos3-examples-master/controllers/epuck_obstacleavoidance/epuck_obstacleavoidance.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/epuck_obstacleavoidance/epuck_obstacleavoidance.h
 argos3/core/utility/configuration/argos_configuration.h
 -
 
-/home/jkoroveshi/argos3-examples-master/controllers/epuck_obstacleavoidance/epuck_obstacleavoidance.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/epuck_obstacleavoidance/epuck_obstacleavoidance.h
 argos3/core/control_interface/ci_controller.h
 -
 argos3/plugins/robots/generic/control_interface/ci_differential_steering_actuator.h
@@ -20,5 +20,5 @@ argos3/plugins/robots/generic/control_interface/ci_differential_steering_actuato
 argos3/plugins/robots/generic/control_interface/ci_proximity_sensor.h
 -
 
-/home/jkoroveshi/argos3-examples-master/controllers/epuck_obstacleavoidance/epuck_obstacleavoidance_automoc.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/epuck_obstacleavoidance/epuck_obstacleavoidance_automoc.cpp
 

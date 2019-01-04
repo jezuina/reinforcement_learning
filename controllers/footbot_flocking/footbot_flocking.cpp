@@ -113,6 +113,7 @@ void CFootBotFlocking::Init(TConfigurationNode& t_node) {
 /****************************************/
 
 void CFootBotFlocking::ControlStep() {
+
    SetWheelSpeedsFromVector(VectorToLight() + FlockingVector());
 }
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jkoroveshi/argos3-examples-master
+CMAKE_SOURCE_DIR = /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jkoroveshi/argos3-examples-master
+CMAKE_BINARY_DIR = /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master
 
 # Utility rule file for mpga_phototaxis_automoc.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/jkoroveshi/argos3-examples-master
 include embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/progress.make
 
 embedding/mpga/CMakeFiles/mpga_phototaxis_automoc:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jkoroveshi/argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target mpga_phototaxis"
-	cd /home/jkoroveshi/argos3-examples-master/embedding/mpga && /usr/bin/cmake -E cmake_autogen /home/jkoroveshi/argos3-examples-master/embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/ Release
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target mpga_phototaxis"
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/embedding/mpga && /usr/bin/cmake -E cmake_autogen /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/ Debug
 
 mpga_phototaxis_automoc: embedding/mpga/CMakeFiles/mpga_phototaxis_automoc
 mpga_phototaxis_automoc: embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/build.make
@@ -68,10 +68,10 @@ embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/build: mpga_phototaxis_aut
 .PHONY : embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/build
 
 embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/clean:
-	cd /home/jkoroveshi/argos3-examples-master/embedding/mpga && $(CMAKE_COMMAND) -P CMakeFiles/mpga_phototaxis_automoc.dir/cmake_clean.cmake
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/embedding/mpga && $(CMAKE_COMMAND) -P CMakeFiles/mpga_phototaxis_automoc.dir/cmake_clean.cmake
 .PHONY : embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/clean
 
 embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/depend:
-	cd /home/jkoroveshi/argos3-examples-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jkoroveshi/argos3-examples-master /home/jkoroveshi/argos3-examples-master/embedding/mpga /home/jkoroveshi/argos3-examples-master /home/jkoroveshi/argos3-examples-master/embedding/mpga /home/jkoroveshi/argos3-examples-master/embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/embedding/mpga /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/embedding/mpga /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : embedding/mpga/CMakeFiles/mpga_phototaxis_automoc.dir/depend
 

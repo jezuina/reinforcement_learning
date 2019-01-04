@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jkoroveshi/argos3-examples-master
+CMAKE_SOURCE_DIR = /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jkoroveshi/argos3-examples-master
+CMAKE_BINARY_DIR = /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master
 
 # Utility rule file for custom_distributions_loop_functions_automoc.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/jkoroveshi/argos3-examples-master
 include loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc.dir/progress.make
 
 loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jkoroveshi/argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target custom_distributions_loop_functions"
-	cd /home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions && /usr/bin/cmake -E cmake_autogen /home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc.dir/ Release
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target custom_distributions_loop_functions"
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/custom_distributions_loop_functions && /usr/bin/cmake -E cmake_autogen /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc.dir/ Debug
 
 custom_distributions_loop_functions_automoc: loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc
 custom_distributions_loop_functions_automoc: loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc.dir/build.make
@@ -68,10 +68,10 @@ loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributio
 .PHONY : loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc.dir/build
 
 loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc.dir/clean:
-	cd /home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions && $(CMAKE_COMMAND) -P CMakeFiles/custom_distributions_loop_functions_automoc.dir/cmake_clean.cmake
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/custom_distributions_loop_functions && $(CMAKE_COMMAND) -P CMakeFiles/custom_distributions_loop_functions_automoc.dir/cmake_clean.cmake
 .PHONY : loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc.dir/clean
 
 loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc.dir/depend:
-	cd /home/jkoroveshi/argos3-examples-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jkoroveshi/argos3-examples-master /home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions /home/jkoroveshi/argos3-examples-master /home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions /home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/custom_distributions_loop_functions /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/custom_distributions_loop_functions /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : loop_functions/custom_distributions_loop_functions/CMakeFiles/custom_distributions_loop_functions_automoc.dir/depend
 

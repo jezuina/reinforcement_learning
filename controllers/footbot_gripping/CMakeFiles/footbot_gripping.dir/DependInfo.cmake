@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jkoroveshi/argos3-examples-master/controllers/footbot_gripping/footbot_gripping.cpp" "/home/jkoroveshi/argos3-examples-master/controllers/footbot_gripping/CMakeFiles/footbot_gripping.dir/footbot_gripping.cpp.o"
-  "/home/jkoroveshi/argos3-examples-master/controllers/footbot_gripping/footbot_gripping_automoc.cpp" "/home/jkoroveshi/argos3-examples-master/controllers/footbot_gripping/CMakeFiles/footbot_gripping.dir/footbot_gripping_automoc.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_gripping/footbot_gripping.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_gripping/CMakeFiles/footbot_gripping.dir/footbot_gripping.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_gripping/footbot_gripping_automoc.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_gripping/CMakeFiles/footbot_gripping.dir/footbot_gripping_automoc.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jkoroveshi/argos3-examples-master
+CMAKE_SOURCE_DIR = /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jkoroveshi/argos3-examples-master
+CMAKE_BINARY_DIR = /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master
 
 # Utility rule file for footbot_diffusion_automoc.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/jkoroveshi/argos3-examples-master
 include controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/progress.make
 
 controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jkoroveshi/argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target footbot_diffusion"
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_diffusion && /usr/bin/cmake -E cmake_autogen /home/jkoroveshi/argos3-examples-master/controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/ Release
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target footbot_diffusion"
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_diffusion && /usr/bin/cmake -E cmake_autogen /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/ Debug
 
 footbot_diffusion_automoc: controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc
 footbot_diffusion_automoc: controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/build.make
@@ -68,10 +68,10 @@ controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/build: fo
 .PHONY : controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/build
 
 controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/clean:
-	cd /home/jkoroveshi/argos3-examples-master/controllers/footbot_diffusion && $(CMAKE_COMMAND) -P CMakeFiles/footbot_diffusion_automoc.dir/cmake_clean.cmake
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_diffusion && $(CMAKE_COMMAND) -P CMakeFiles/footbot_diffusion_automoc.dir/cmake_clean.cmake
 .PHONY : controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/clean
 
 controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/depend:
-	cd /home/jkoroveshi/argos3-examples-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jkoroveshi/argos3-examples-master /home/jkoroveshi/argos3-examples-master/controllers/footbot_diffusion /home/jkoroveshi/argos3-examples-master /home/jkoroveshi/argos3-examples-master/controllers/footbot_diffusion /home/jkoroveshi/argos3-examples-master/controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_diffusion /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_diffusion /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : controllers/footbot_diffusion/CMakeFiles/footbot_diffusion_automoc.dir/depend
 

@@ -96,6 +96,9 @@ public:
 
    virtual bool IsEpisodeFinished();
 
+   virtual int GetReward();
+
+   virtual void GetState(Real state[]);
    /* Pointer to the positioning sensor */
      CCI_PositioningSensor* m_pcPosSens;
 private:

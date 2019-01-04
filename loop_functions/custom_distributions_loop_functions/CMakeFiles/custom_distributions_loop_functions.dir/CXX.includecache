@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions/custom_distributions_loop_functions.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/custom_distributions_loop_functions/custom_distributions_loop_functions.cpp
 custom_distributions_loop_functions.h
-/home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions/custom_distributions_loop_functions.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/custom_distributions_loop_functions/custom_distributions_loop_functions.h
 argos3/plugins/simulator/entities/box_entity.h
 -
 argos3/plugins/simulator/entities/cylinder_entity.h
@@ -20,9 +20,9 @@ sstream
 list
 -
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions/custom_distributions_loop_functions.h
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/custom_distributions_loop_functions/custom_distributions_loop_functions.h
 argos3/core/simulator/loop_functions.h
 -
 
-/home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions/custom_distributions_loop_functions_automoc.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/custom_distributions_loop_functions/custom_distributions_loop_functions_automoc.cpp
 

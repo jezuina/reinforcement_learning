@@ -1,4 +1,4 @@
-# Install script for directory: /home/jkoroveshi/argos3-examples-master/loop_functions
+# Install script for directory: /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Release")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -34,13 +34,13 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/jkoroveshi/argos3-examples-master/loop_functions/foraging_loop_functions/cmake_install.cmake")
-  include("/home/jkoroveshi/argos3-examples-master/loop_functions/mpga_loop_functions/cmake_install.cmake")
-  include("/home/jkoroveshi/argos3-examples-master/loop_functions/custom_distributions_loop_functions/cmake_install.cmake")
-  include("/home/jkoroveshi/argos3-examples-master/loop_functions/object_tracking_loop_functions/cmake_install.cmake")
-  include("/home/jkoroveshi/argos3-examples-master/loop_functions/trajectory_loop_functions/cmake_install.cmake")
-  include("/home/jkoroveshi/argos3-examples-master/loop_functions/id_loop_functions/cmake_install.cmake")
-  include("/home/jkoroveshi/argos3-examples-master/loop_functions/manualcontrol_loop_functions/cmake_install.cmake")
+  include("/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/foraging_loop_functions/cmake_install.cmake")
+  include("/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/mpga_loop_functions/cmake_install.cmake")
+  include("/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/custom_distributions_loop_functions/cmake_install.cmake")
+  include("/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/object_tracking_loop_functions/cmake_install.cmake")
+  include("/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/trajectory_loop_functions/cmake_install.cmake")
+  include("/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/id_loop_functions/cmake_install.cmake")
+  include("/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/manualcontrol_loop_functions/cmake_install.cmake")
 
 endif()
 

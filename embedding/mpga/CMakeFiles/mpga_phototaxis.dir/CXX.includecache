@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/jkoroveshi/argos3-examples-master/embedding/mpga/main.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/embedding/mpga/main.cpp
 iostream
 -
 fstream
@@ -16,7 +16,7 @@ loop_functions/mpga_loop_functions/mpga.h
 loop_functions/mpga_loop_functions/mpga_phototaxis_loop_functions.h
 -
 
-/home/jkoroveshi/argos3-examples-master/embedding/mpga/mpga_phototaxis_automoc.cpp
+/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/embedding/mpga/mpga_phototaxis_automoc.cpp
 
 controllers/footbot_nn/footbot_nn_controller.h
 argos3/core/control_interface/ci_controller.h
