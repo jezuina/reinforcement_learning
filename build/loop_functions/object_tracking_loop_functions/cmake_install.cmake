@@ -1,4 +1,4 @@
-# Install script for directory: /home/jkoroveshi/argos3-examples-master/loop_functions/object_tracking_loop_functions
+# Install script for directory: /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/object_tracking_loop_functions
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

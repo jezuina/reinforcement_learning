@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jkoroveshi/argos3-examples-master/loop_functions/object_tracking_loop_functions/object_tracking_loop_functions.cpp" "/home/jkoroveshi/argos3-examples-master/build/loop_functions/object_tracking_loop_functions/CMakeFiles/object_tracking_loop_functions.dir/object_tracking_loop_functions.cpp.o"
-  "/home/jkoroveshi/argos3-examples-master/build/loop_functions/object_tracking_loop_functions/object_tracking_loop_functions_automoc.cpp" "/home/jkoroveshi/argos3-examples-master/build/loop_functions/object_tracking_loop_functions/CMakeFiles/object_tracking_loop_functions.dir/object_tracking_loop_functions_automoc.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/object_tracking_loop_functions/object_tracking_loop_functions.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/object_tracking_loop_functions/CMakeFiles/object_tracking_loop_functions.dir/object_tracking_loop_functions.cpp.o"
+  "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/object_tracking_loop_functions/object_tracking_loop_functions_automoc.cpp" "/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/loop_functions/object_tracking_loop_functions/CMakeFiles/object_tracking_loop_functions.dir/object_tracking_loop_functions_automoc.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,13 +19,12 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "loop_functions/object_tracking_loop_functions"
-  "../loop_functions/object_tracking_loop_functions"
   "/usr/include/x86_64-linux-gnu/qt5"
   "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
   "/usr/include/x86_64-linux-gnu/qt5/QtGui"
   "/usr/include/x86_64-linux-gnu/qt5/QtCore"
   "/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64"
-  "../"
+  "."
   "/usr/include/lua5.2"
   )
 
