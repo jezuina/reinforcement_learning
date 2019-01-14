@@ -102,7 +102,8 @@ public:
 
    virtual void remember();
 
-   virtual void GetState(Real state[]);
+   virtual void GetCurrentState(double state[]);
+   virtual void GetPreviousState(double state[]);
    /* Pointer to the positioning sensor */
      CCI_PositioningSensor* m_pcPosSens;
 private:
@@ -151,6 +152,8 @@ private:
    PyObject *pArgs, *pValue;
 
 
+   //previous state
+   double previous_state[2];
 };
 
 #endif

@@ -163,12 +163,12 @@
     </box>
 
     <!-- Place a foot-bot in the origin and bind it to the controller -->
-    <!--foot-bot id="fb_0">
-      <body position="0,0,0" orientation="0,0,0" />
+    <!--foot-bot id="fb_3">
+      <body position="0,20,0" orientation="0,0,0" />
       <controller config="oac"/>
     </foot-bot--> 
-    <!--foot-bot id="fb_1">
-      <body position="0,0.2,0" orientation="0,0,0" />
+    <!--foot-bot id="fb_4">
+      <body position="0,-7,0" orientation="0,0,0" />
       <controller config="fdc1"/>
     </foot-bot-->
   </arena>

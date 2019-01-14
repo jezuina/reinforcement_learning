@@ -61,12 +61,12 @@ void CObjectTrackingLoopFunctions::Init(TConfigurationNode& t_tree) {
 	   CQuaternion cFBRot;
 
 	   /* Choose a random position */
-	   cFBPos.Set(0, 0.0001, 0.0f);
+	   cFBPos.Set(0,0.2, 0.0f);
 	   CRadians r = CRadians(0);
 	   cFBRot.FromAngleAxis(r, CVector3::Z);
 	   bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
 
-	   cFBPos.Set(0, 0, 0.0f);
+	   cFBPos.Set(0, -0.1, 0.0f);
 	   bDone = MoveEntity(m_pcFootBot2->GetEmbodiedEntity(), cFBPos, cFBRot);
 
 }
@@ -76,13 +76,68 @@ void CObjectTrackingLoopFunctions::Init(TConfigurationNode& t_tree) {
 
 void CObjectTrackingLoopFunctions::Reset() {
 
+   std::cout<<"inside reseting "<<std::endl;
+   //merret lista e te gjithe entiteteve te tipit foot-bot
+   bool exists = false;
+   		CSpace::TMapPerType& m_cFootbots = GetSpace().GetEntitiesByType("foot-bot");
+   	    std::cout<<"robots number "<<m_cFootbots.size()<<std::endl;
+   			 for(CSpace::TMapPerType::iterator it = m_cFootbots.begin();it != m_cFootbots.end(); ++it)
+   			 {
+   				/* Get handle to foot-bot entity and controller */
+   				CFootBotEntity& cFootBot = *any_cast<CFootBotEntity*>(it->second);
+   				std::string id = cFootBot.GetId();
 
+   				if(id == "fb_0")
+   				{
+   					exists = true;
+   					break;
+   				}
+
+   			 }
+
+
+   if(exists)
+   {
+	   std::cout<<"remove entity "<<std::endl;
+	   RemoveEntity(*m_pcFootBot1);
+   }
+
+   /* Create a RNG (it is automatically disposed of by ARGoS) */
+   CRandom::CRNG* pcRNG = CRandom::CreateRNG("argos");
+   CVector3 cFBPos;
+   CQuaternion cFBRot;
+
+   /* Choose a random position */
+   cFBPos.Set(0, 0.2, 0.0f);
+   CRadians r = CRadians(0);
+   cFBRot.FromAngleAxis(r, CVector3::Z);
+   std::cout<<"adding entity2 "<<std::endl;
+   if(exists == false)
+   {
+
+	   //krijohet roboti1
+	   	m_pcFootBot1 = new CFootBotEntity(
+	   	      "fb_0",    // entity id
+	   	      "fdc1"    // controller id as set in the XML
+	   	      );
+	   	   AddEntity(*m_pcFootBot1);
+	   	 bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
+   }
+
+   cFBPos.Set(0, -0.1, 0.0f);
+   bool bDone = MoveEntity(m_pcFootBot2->GetEmbodiedEntity(), cFBPos, cFBRot);
+
+
+   trials_done ++;
+   trial_steps_done = 0;
 }
 
 /****************************************/
 /****************************************/
 
 void CObjectTrackingLoopFunctions::PostStep() {
+
+	 argos::LOG << "steps "<< trial_steps_done << std::endl;
 
 	//duhen mare te dhenat mbi gjendjen e re, dhe shperblimi
 	//keto duhet te perdoren per te perditesuar vleren e state-value
@@ -92,6 +147,7 @@ void CObjectTrackingLoopFunctions::PostStep() {
 
 	    //merret lista e te gjithe entiteteve te tipit foot-bot
 		CSpace::TMapPerType& m_cFootbots = GetSpace().GetEntitiesByType("foot-bot");
+		if(m_cFootbots.size() == 1) Reset();
 	    //std::cout<<"robots number "<<m_cFootbots.size()<<std::endl;
 			 for(CSpace::TMapPerType::iterator it = m_cFootbots.begin();it != m_cFootbots.end(); ++it)
 			 {
@@ -105,25 +161,15 @@ void CObjectTrackingLoopFunctions::PostStep() {
 				  {
 					  CObstacleAvoidance& cController = dynamic_cast<CObstacleAvoidance&>(cFootBot.GetControllableEntity().GetController());
 
-					  std::cout<<"calling remember"<<std::endl;
-					  cController.remember();
+					  //std::cout<<"calling remember"<<std::endl;
+					  //cController.remember();
 
 					  if(cController.IsEpisodeFinished() == true)
 					  {
 
-						  /* Create a RNG (it is automatically disposed of by ARGoS) */
-						 	   CRandom::CRNG* pcRNG = CRandom::CreateRNG("argos");
-						 	   CVector3 cFBPos;
-						 	   CQuaternion cFBRot;
-
-						 	   /* Choose a random position */
-						 	   cFBPos.Set(0, 0.00001, 0.0f);
-						 	   CRadians r = CRadians(0);
-						 	   cFBRot.FromAngleAxis(r, CVector3::Z);
-						 	   bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
-
-						 	   cFBPos.Set(0, 0, 0.0f);
-						 	   bDone = MoveEntity(m_pcFootBot2->GetEmbodiedEntity(), cFBPos, cFBRot);
+						 	   std::cout<<"reseting "<<id<<std::endl;
+						 	   Reset();
+						 	   break;
 					  }
 
 				  }
@@ -132,12 +178,18 @@ void CObjectTrackingLoopFunctions::PostStep() {
 			 }
 
 
+	 //trial_steps_done: bejme reset nqs arrihet numri i hereve qe zhvillohet nje episod
+	 trial_steps_done ++;
 
-
+	 if(trial_steps_done == trial_length)
+	 {
+		 Reset();
+	 }
 }
 
 bool CObjectTrackingLoopFunctions::IsExperimentFinished()
 {
+	if(trials_done == number_of_trials) return true;
 	return false;
 }
 /****************************************/

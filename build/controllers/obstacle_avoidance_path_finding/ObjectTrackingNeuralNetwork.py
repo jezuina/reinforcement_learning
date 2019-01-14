@@ -9,7 +9,7 @@ from collections import deque
 
 class OTNeuralNetwork:
     def __init__(self):
-	self.state_dimension=10
+	self.state_dimension=4
 	self.action_space=4
         self.memory  = deque(maxlen=2000)
         
@@ -36,10 +36,20 @@ class OTNeuralNetwork:
         return model
 
     def act(self, state):
+        state=np.array(state)
+	state=state.reshape(1,self.state_dimension)
+	print "state"
+	print state
         self.epsilon *= self.epsilon_decay
+	print "epsilon"
+	print self.epsilon
         self.epsilon = max(self.epsilon_min, self.epsilon)
-        if np.random.random() < self.epsilon:
+	print "epsilon"
+	print self.epsilon
+        if np.random.random() < self.epsilon:	    
+	    print "random"
             return random.randint(0,4)
+	print "argmax"
         return np.argmax(self.model.predict(state))
 
     def remember(self, state, action, reward, newState, done):
@@ -48,7 +58,7 @@ class OTNeuralNetwork:
             print a
 	
     def replay(self):
-        batch_size = 2
+        batch_size = 32
 	print "memory size "
 	print len(self.memory)
         if len(self.memory) < batch_size: 
