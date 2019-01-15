@@ -100,10 +100,15 @@ public:
 
    virtual int GetReward();
 
-   virtual void remember();
+
 
    virtual void GetCurrentState(double state[]);
    virtual void GetPreviousState(double state[]);
+   virtual void SetPreviousState(double state[]);
+   virtual void Remember(double current_state[], int action, double new_state[], int reward, bool done);
+   virtual void Replay();
+   virtual void TargetTrain();
+   virtual int GetLastAction();
    /* Pointer to the positioning sensor */
      CCI_PositioningSensor* m_pcPosSens;
 private:
@@ -154,6 +159,7 @@ private:
 
    //previous state
    double previous_state[2];
+   int last_action;
 };
 
 #endif

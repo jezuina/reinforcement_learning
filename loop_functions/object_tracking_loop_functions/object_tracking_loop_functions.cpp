@@ -32,7 +32,14 @@ CObjectTrackingLoopFunctions::CObjectTrackingLoopFunctions() :
    m_pcFootBot1(NULL),
    m_pcController1(NULL),
    m_pcFootBot2(NULL),
-   m_pcController2(NULL){}
+   m_pcController2(NULL){
+
+	previous_state[0] = 0;
+	previous_state[1] = 0;
+	previous_state[2] = 0;
+	previous_state[3] = 0;
+
+}
 
 
 
@@ -160,9 +167,34 @@ void CObjectTrackingLoopFunctions::PostStep() {
 				  if(id == "fb_1")//ky eshte foot-boti qe po trajnohet
 				  {
 					  CObstacleAvoidance& cController = dynamic_cast<CObstacleAvoidance&>(cFootBot.GetControllableEntity().GetController());
+					  //merret new state, reward dhe done
+					   int reward = cController.GetReward();
+					   bool done = cController.IsEpisodeFinished();
+					   int action = cController.GetLastAction();
 
-					  //std::cout<<"calling remember"<<std::endl;
-					  //cController.remember();
+					   //nga foot boti merren leximet per dy gjendjen e fundit
+					   double prev_state_bot[2];
+					   double curr_state_bot[2];
+
+					   cController.GetPreviousState(prev_state_bot);
+					   cController.GetCurrentState(curr_state_bot);
+
+					   double new_experiment_state[4];
+					   new_experiment_state[0] = prev_state_bot[0];
+					   new_experiment_state[1] = prev_state_bot[1];
+					   new_experiment_state[2] = curr_state_bot[0];
+					   new_experiment_state[3] = curr_state_bot[1];
+
+					  cController.Remember(previous_state, action, new_experiment_state, reward, done);
+					  cController.Replay();
+					  cController.TargetTrain();
+
+					  cController.SetPreviousState(curr_state_bot);
+
+					  previous_state[0] = new_experiment_state[0];
+					  previous_state[1] = new_experiment_state[1];
+					  previous_state[2] = new_experiment_state[2];
+					  previous_state[3] = new_experiment_state[3];
 
 					  if(cController.IsEpisodeFinished() == true)
 					  {
