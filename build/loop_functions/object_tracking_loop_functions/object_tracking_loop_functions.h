@@ -43,7 +43,7 @@ private:
    int trial_length = 500;
    int trials_done = 0;
    int trial_steps_done = 0;
-
+   double previous_state[4];
 };
 
 #endif

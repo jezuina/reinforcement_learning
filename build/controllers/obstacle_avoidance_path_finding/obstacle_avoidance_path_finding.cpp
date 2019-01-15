@@ -141,9 +141,7 @@ void CObstacleAvoidance::ControlStep() {
 
     int action = otnn->callMethodAct(state,4);
     std::cout<<"action "<<action<<std::endl;
-
-    previous_state[0] = current_state[0];
-    previous_state[1] = current_state[1];
+    last_action = action;
 
     //0 majtas
     //1 djathtas
@@ -236,15 +234,9 @@ int CObstacleAvoidance::GetReward()
 }
 
 
-void CObstacleAvoidance::remember()
+void CObstacleAvoidance::Remember(double current_state[], int action, double new_state[], int reward, bool done)
 {
-   double state[] = {1,2,3,4,5,6,7,8,9,10};
-   int action = 1;
-   int reward = 1;
-   double new_state[] = {11,12,13,14,15,16,17,18,19,20};
-   bool done = false;
-
-   otnn->callMethodRemember(state,action,reward,new_state,done,10);
+   otnn->callMethodRemember(current_state,action,reward,new_state,done,4);
 }
 
 
@@ -277,6 +269,26 @@ void CObstacleAvoidance::GetPreviousState(double state[])
 	state[1] = previous_state[1];//kendi
 }
 
+void CObstacleAvoidance::SetPreviousState(double state[])
+{
+    previous_state[0] = state[0];//gjatesia
+	previous_state[1] = state[1];//kendi
+}
+
+void CObstacleAvoidance::Replay()
+{
+   otnn->callMethodReplay();
+}
+
+void CObstacleAvoidance::TargetTrain()
+{
+   otnn->callMethodTargetTrain();
+}
+
+int CObstacleAvoidance::GetLastAction()
+{
+	return last_action;
+}
 /****************************************/
 /****************************************/
 

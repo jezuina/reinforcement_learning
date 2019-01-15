@@ -38,24 +38,28 @@ class OTNeuralNetwork:
     def act(self, state):
         state=np.array(state)
 	state=state.reshape(1,self.state_dimension)
-	print "state"
-	print state
+	#print "state"
+	#print state
         self.epsilon *= self.epsilon_decay
-	print "epsilon"
-	print self.epsilon
+	#print "epsilon"
+	#print self.epsilon
         self.epsilon = max(self.epsilon_min, self.epsilon)
-	print "epsilon"
-	print self.epsilon
+	#print "epsilon"
+	#print self.epsilon
         if np.random.random() < self.epsilon:	    
 	    print "random"
-            return random.randint(0,4)
+	    randomn = random.randint(0,3)
+	    print randomn
+            return randomn
 	print "argmax"
-        return np.argmax(self.model.predict(state))
+        maxn = np.argmax(self.model.predict(state))
+	print maxn
+        return maxn
 
     def remember(self, state, action, reward, newState, done):
         self.memory.append([state,action,reward, newState, done])
-	for a in self.memory:
-            print a
+	#for a in self.memory:
+            #print a
 	
     def replay(self):
         batch_size = 32
@@ -65,28 +69,35 @@ class OTNeuralNetwork:
             return
 
         samples = random.sample(self.memory, batch_size)
-	print "samples"
-	print samples
+	#print "samples"
+	#print samples
         for sample in samples:
             state, action, reward, new_state, done = sample
-	    print "sample data"
-	    print "statee"
-	    print state
+	    #print "sample data"
+	    #print "statee"
+	    #print state
             state=np.array(state)
 	    state=state.reshape(1,self.state_dimension)
 	    new_state=np.array(new_state)
 	    new_state=new_state.reshape(1,self.state_dimension)
-	    print state
+	    #print state
+	    #print "new state"
+	    #print new_state
             target = self.target_model.predict(state)
-	    print "target"
-	    print target
+	    #print "target"
+	    #print target
             if done:
 		print "done"
                 target[0][action] = reward
             else:
-		print "not done"
-                Q_future = max(self.target_model.predict(new_state)[0])
-                target[0][action] = reward + Q_future * self.gamma
+		try:
+		    print "not done"
+	            Q_future = max(self.target_model.predict(new_state)[0])
+		    print "action"
+		    print action
+	            target[0][action] = reward + Q_future * self.gamma
+		except Exception as e:
+	            print e
             self.model.fit(state, target, epochs=1, verbose=0)
 	plot_model(self.model, to_file='model.png')	
 	#print "weights"
