@@ -109,6 +109,8 @@ public:
    virtual void Replay();
    virtual void TargetTrain();
    virtual int GetLastAction();
+   virtual void SaveModel();
+   virtual void WriteToFile(int episodeLength[], int dimension);
    /* Pointer to the positioning sensor */
      CCI_PositioningSensor* m_pcPosSens;
 private:

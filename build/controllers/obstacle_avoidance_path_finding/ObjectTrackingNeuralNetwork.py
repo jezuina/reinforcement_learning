@@ -17,7 +17,7 @@ class OTNeuralNetwork:
         self.epsilon = 1.0
         self.epsilon_min = 0.01
         self.epsilon_decay = 0.995
-        self.learning_rate = 0.005
+        self.learning_rate = 0.05
         self.tau = .125
 
         self.model        = self.create_model()
@@ -28,10 +28,12 @@ class OTNeuralNetwork:
         state_shape  = [self.state_dimension,self.action_space]
         model.add(Dense(24, input_dim=self.state_dimension, activation="relu"))
         model.add(Dense(48, activation="relu"))
+	model.add(Dense(48, activation="relu"))
         model.add(Dense(24, activation="relu"))
         model.add(Dense(state_shape[1]))
         model.compile(loss="mean_squared_error",
             optimizer=Adam(lr=self.learning_rate))
+        #model.load_weights("weights")
 	print "krijohen modelet"
         return model
 
@@ -107,10 +109,30 @@ class OTNeuralNetwork:
         weights = self.model.get_weights()
         target_weights = self.target_model.get_weights()
         for i in range(len(target_weights)):
-            target_weights[i] = weights[i] * self.tau + target_weights[i] * (1 - self.tau)
+            #target_weights[i] = weights[i] * self.tau + target_weights[i] * (1 - self.tau)
+	    target_weights[i] = weights[i] + target_weights[i]
         self.target_model.set_weights(target_weights)
 
     def save_model(self, fn):
-	print "filename"
+	print "weights"
 	print fn
-        self.model.save(fn)
+	# serialize model to JSON
+	#model_json = self.model.to_json()
+	#with open("model.json", "w") as json_file:
+    	     #json_file.write(model_json)
+	# serialize weights to HDF5
+	self.model.save_weights("model.h5")
+	print("Saved model to disk")
+        #self.model.save_weights("/home/jkoroveshi/weights.model")
+
+
+
+    def writeToFile(self,episodeLength):
+	print "write ti file"
+        try:
+	    episodeLength=np.array(episodeLength)
+	    print episodeLength
+            np.savetxt('episodeLength.out', episodeLength, fmt="%d")   # X is an array
+	except Exception as e:
+   	    print e
+

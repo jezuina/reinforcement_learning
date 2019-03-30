@@ -28,6 +28,7 @@ public:
 	void callMethodReplay();
 	void callMethodTargetTrain();
 	void callMethodSaveModel(string);
+	void callMethodSaveTeFile(const int[], int);
 
 };
 

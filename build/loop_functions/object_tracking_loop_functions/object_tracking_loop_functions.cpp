@@ -106,7 +106,7 @@ void CObjectTrackingLoopFunctions::Reset() {
    if(exists)
    {
 	   std::cout<<"remove entity "<<std::endl;
-	   RemoveEntity(*m_pcFootBot1);
+	 //  RemoveEntity(*m_pcFootBot1);
    }
 
    /* Create a RNG (it is automatically disposed of by ARGoS) */
@@ -128,13 +128,42 @@ void CObjectTrackingLoopFunctions::Reset() {
 	   	      "fdc1"    // controller id as set in the XML
 	   	      );
 	   	   AddEntity(*m_pcFootBot1);
-	   	 bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
+	   //	 bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
+   }
+
+   //levizim footbotin 1
+   bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
+
+   float x =0;
+   float y = 0;
+
+   if((trials_done % 4) == 0) //0 0.2     0  -0.1
+   {
+	   x = 0;
+	   y = 0;
+   }
+   else if((trials_done % 4) == 1)
+   {
+	   x = -0.3;
+	   y = 0.3;
+   }
+   else if((trials_done % 4) == 2)
+   {
+	   //111111111ii
+	   x = 0;
+	   y = 0.3;
+   }
+   else
+   {
+	   x = 0.3;
+	   y = 0.3;
    }
 
    cFBPos.Set(0, -0.1, 0.0f);
-   bool bDone = MoveEntity(m_pcFootBot2->GetEmbodiedEntity(), cFBPos, cFBRot);
+   bDone = MoveEntity(m_pcFootBot2->GetEmbodiedEntity(), cFBPos, cFBRot);
 
 
+   episodeLength[trials_done] = trial_steps_done;
    trials_done ++;
    trial_steps_done = 0;
 }
@@ -203,9 +232,7 @@ void CObjectTrackingLoopFunctions::PostStep() {
 						 	   Reset();
 						 	   break;
 					  }
-
-				  }
-				 // std::cout<<"robot id "<<id<<std::endl;
+                 }
 
 			 }
 
@@ -217,11 +244,38 @@ void CObjectTrackingLoopFunctions::PostStep() {
 	 {
 		 Reset();
 	 }
+
 }
 
 bool CObjectTrackingLoopFunctions::IsExperimentFinished()
 {
-	if(trials_done == number_of_trials) return true;
+	std::cout<<"is experiment finished "<<std::endl;
+	std::cout<<"trials done "<<trials_done<<std::endl;
+	std::cout<<"number of trials "<<number_of_trials<<std::endl;
+	if(trials_done == number_of_trials)
+	{
+
+		CSpace::TMapPerType& m_cFootbots = GetSpace().GetEntitiesByType("foot-bot");
+
+			    //std::cout<<"robots number "<<m_cFootbots.size()<<std::endl;
+					 for(CSpace::TMapPerType::iterator it = m_cFootbots.begin();it != m_cFootbots.end(); ++it)
+					 {
+
+						 /* Get handle to foot-bot entity and controller */
+						  CFootBotEntity& cFootBot = *any_cast<CFootBotEntity*>(it->second);
+						  std::string id = cFootBot.GetId();
+						  if(id == "fb_1")//ky eshte foot-boti qe po trajnohet
+						  {
+							  CObstacleAvoidance& cController = dynamic_cast<CObstacleAvoidance&>(cFootBot.GetControllableEntity().GetController());
+							  std::cout<<"saving model "<<std::endl;
+							  cController.SaveModel();
+							  cController.WriteToFile(episodeLength, 200);
+						  }
+					 }
+
+
+	 return true;
+	}
 	return false;
 }
 /****************************************/

@@ -70,6 +70,29 @@ void ObjectTrackingNeuralNetwork::callMethodRemember(const double state[], int a
 
 	}
 
+void ObjectTrackingNeuralNetwork::callMethodSaveTeFile(const int episodeLength[], int dimension)
+	{
+		PyObject *pValue;
+		//Transfer the C++ state vector to a python tuple
+		PyObject *pArgsState = PyTuple_New(dimension);
+		   for (int i = 0; i < dimension; ++i)
+		   {
+			   pValue = PyInt_FromLong(episodeLength[i]);
+			   if (!pValue)
+			   {
+				 fprintf(stderr, "Cannot convert argument\n");
+			   }
+		    /* pValue reference stolen here: */
+		    PyTuple_SetItem(pArgsState, i, pValue);
+		   }
+
+
+		  PyObject* remember = PyObject_CallMethod(instance, "writeToFile", "(O)", pArgsState);
+		  assert(remember != NULL);
+
+	}
+
+
 
 	int ObjectTrackingNeuralNetwork::callMethodAct(const double state[], int state_dimension)
 	{

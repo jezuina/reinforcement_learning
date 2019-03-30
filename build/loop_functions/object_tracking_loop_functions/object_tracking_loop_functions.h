@@ -39,11 +39,12 @@ private:
    CFootBotNNController* m_pcController1;
    CFootBotEntity* m_pcFootBot2;
    CFootBotNNController* m_pcController2;
-   int number_of_trials = 1000;
+   int number_of_trials = 200;
    int trial_length = 500;
    int trials_done = 0;
    int trial_steps_done = 0;
    double previous_state[4];
+   int episodeLength[200];
 };
 
 #endif

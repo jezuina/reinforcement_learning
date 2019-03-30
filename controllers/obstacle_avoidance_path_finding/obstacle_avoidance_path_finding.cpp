@@ -202,7 +202,7 @@ bool CObstacleAvoidance::IsEpisodeFinished()
 	if(bSomeoneFlashed == false)
 		return false;
 
-	if(cAccum.Length() < 35 && cAccum.Length() != 0 && bSomeoneFlashed)
+	if(cAccum.Length() < 35 && cAccum.Length() > 10 && bSomeoneFlashed)
 		return false;
 	else return true;
 
@@ -220,15 +220,19 @@ int CObstacleAvoidance::GetReward()
 	Real distanca =0;
 	bool bSomeoneFlashed = false;
 	CVector2 cAccum;
-	for(size_t i = 0; ! bSomeoneFlashed && i < sBlobs.BlobList.size(); ++i) {
+	for(size_t i = 0; i < sBlobs.BlobList.size(); ++i) {
 		bSomeoneFlashed = (sBlobs.BlobList[i]->Color == CColor::RED);
-		std::cout << "distanca "<<sBlobs.BlobList[i]->Distance<<std::endl;
-		std::cout << "kendi "<<sBlobs.BlobList[i]->Angle<<std::endl;
-		distanca = sBlobs.BlobList[i]->Distance;
-		cAccum = CVector2(sBlobs.BlobList[i]->Distance,sBlobs.BlobList[i]->Angle);
+		//std::cout << "distanca "<<sBlobs.BlobList[i]->Distance<<std::endl;
+		//std::cout << "kendi "<<sBlobs.BlobList[i]->Angle<<std::endl;
+		//distanca = sBlobs.BlobList[i]->Distance;
+		cAccum += CVector2(sBlobs.BlobList[i]->Distance,sBlobs.BlobList[i]->Angle);
 	}
 
-	if(distanca < 35 && distanca != 0)
+	cAccum /= sBlobs.BlobList.size();
+
+	distanca = cAccum.Length();//gjatesia cm
+	std::cout << "get reward gjatesia "<<distanca<<std::endl;
+	if(distanca < 35 && distanca > 10)
 		return 1;
 	else return 0;
 }
@@ -239,12 +243,24 @@ void CObstacleAvoidance::Remember(double current_state[], int action, double new
    otnn->callMethodRemember(current_state,action,reward,new_state,done,4);
 }
 
+void CObstacleAvoidance::WriteToFile(int episodeLength[], int dimension)
+{
+   otnn->callMethodSaveTeFile(episodeLength, dimension);
+}
+
+void CObstacleAvoidance::SaveModel()
+{
+   otnn->callMethodSaveModel("file");
+}
 
 void CObstacleAvoidance::GetCurrentState(double state[])
 {
 
 	//camera sensor
 	/* Get led color of nearby robots */
+
+	//sBlobs ka 11 lexime, te perbera nga gjatesia dhe kendi
+	//qe tregojne pozicionin ku eshte pare drita
 	const CCI_ColoredBlobOmnidirectionalCameraSensor::SReadings& sBlobs = m_pcCamera->GetReadings();
 	/*
 	* Check whether someone sent a 1, which means 'flash'
@@ -252,14 +268,29 @@ void CObstacleAvoidance::GetCurrentState(double state[])
 	Real distanca =0;
 	bool bSomeoneFlashed = false;
 	CVector2 cAccum;
+	//std::cout << "getting current state "<<std::endl;
+	//std::cout << "bloblist size  "<<sBlobs.BlobList.size()<<std::endl;
+
 	for(size_t i = 0; i < sBlobs.BlobList.size(); ++i) {
 		bSomeoneFlashed = (sBlobs.BlobList[i]->Color == CColor::RED);
+		//std::cout << "ngjyra  "<<sBlobs.BlobList[i]->Color<<std::endl;
+		//std::cout << "flashed  "<<bSomeoneFlashed<<std::endl;
+		//std::cout << "distanca  "<<sBlobs.BlobList[i]->Distance<<std::endl;
+		//std::cout << "kendi  "<<sBlobs.BlobList[i]->Angle<<std::endl;
 		cAccum += CVector2(sBlobs.BlobList[i]->Distance,sBlobs.BlobList[i]->Angle);
 	}
+	//std::cout << "pas forit "<<std::endl;
+	//std::cout << "pas forit gjatesia  "<<cAccum.Length()<<std::endl;
+	//std::cout << "pas forit kendi  "<<cAccum.Angle().GetValue()<<std::endl;
+
 	cAccum /= sBlobs.BlobList.size();
 
-	state[0] = cAccum.Length();//gjatesia
-	state[1] = cAccum.Angle().GetValue();//kendi
+	//std::cout << "pas pjesetimi "<<std::endl;
+	std::cout << "pas pjesetimit gjatesia  "<<cAccum.Length()<<std::endl;
+	//std::cout << "pas pjesetimit kendi  "<<cAccum.Angle().GetValue()<<std::endl;
+
+	state[0] = cAccum.Length();//gjatesia cm
+	state[1] = cAccum.Angle().GetValue();//kendi radian
 
 }
 
