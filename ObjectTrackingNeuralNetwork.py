@@ -9,12 +9,12 @@ from collections import deque
 
 class OTNeuralNetwork:
     def __init__(self):
-	self.state_dimension=4
+	self.state_dimension=2
 	self.action_space=4
         self.memory  = deque(maxlen=2000)
         
         self.gamma = 0.85
-        self.epsilon = 10.0
+        self.epsilon = 1.0
         self.epsilon_min = 0.01
         self.epsilon_decay = 0.995
         self.learning_rate = 0.08
@@ -26,11 +26,11 @@ class OTNeuralNetwork:
     def create_model(self):
         try:	
 	    model   = Sequential()
-            model.add(Dense(24, input_shape=(2,2), activation="relu"))
-            model.add(Dense(48, activation="relu"))
-	    model.add(Dense(48, activation="relu"))
+            model.add(Dense(12, input_dim=2, activation="relu"))
             model.add(Dense(24, activation="relu"))
-            model.add(Flatten())
+	    #model.add(Dense(48, activation="relu"))
+            model.add(Dense(12, activation="relu"))
+            #model.add(Flatten())
             model.add(Dense(4))
             model.compile(loss="mean_squared_error",
                   optimizer=Adam(lr=self.learning_rate))
@@ -41,22 +41,26 @@ class OTNeuralNetwork:
 	    print e
     def act(self, state):
         state=np.array(state)
-	state=state.reshape(1,2,2)
+	state=state.reshape(1,2)
 	#print "state"
 	#print state
+        #return 3
         self.epsilon *= self.epsilon_decay
-	print "epsilon"
-	print self.epsilon
+	#print "epsilon"
+	#print self.epsilon
         self.epsilon = max(self.epsilon_min, self.epsilon)
 	#print "epsilon"
 	#print self.epsilon
         if np.random.random() < self.epsilon:	    
-	    print "random"
+	    #print "random"
 	    randomn = random.randint(0,3)
 	    #print randomn
             return randomn
 	#print "argmax"
-        maxn = np.argmax(self.model.predict(state))
+        try:
+            maxn = np.argmax(self.model.predict(state))
+        except Exception as e:
+	    print e
 	#print maxn
         return maxn
 
@@ -81,9 +85,9 @@ class OTNeuralNetwork:
 	    #print "statee"
 	    #print state
             state=np.array(state)
-	    state=state.reshape(1,2,2)
+	    state=state.reshape(1,2)
 	    new_state=np.array(new_state)
-	    new_state=new_state.reshape(1,2,2)
+	    new_state=new_state.reshape(1,2)
 	    #print state
 	    #print "new state"
 	    #print new_state

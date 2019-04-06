@@ -110,7 +110,7 @@
     
       <sensors>
         <footbot_proximity implementation="default" show_rays="true" />
-        <colored_blob_omnidirectional_camera implementation="rot_z_only" medium="leds" show_rays="true" />
+        <colored_blob_omnidirectional_camera implementation="rot_z_only" medium="leds" show_rays="false" />
       </sensors>
     
       <params alpha="7.5" delta="0.1" velocity="5" />
@@ -146,20 +146,20 @@
 
       $ argos3 -q box
   -->
-  <arena size="3, 3, 1" center="0,0,0.5">
+  <arena size="7, 7, 1" center="0,0,0.5">
 
     <!-- Place four boxes in a square to delimit the arena -->
-    <box id="wall_north" size="2,0.1,0.5" movable="false">
-      <body position="0,1,0" orientation="0,0,0" />
+    <box id="wall_north" size="6,0.1,0.5" movable="false">
+      <body position="0,3,0" orientation="0,0,0" />
     </box>
-    <box id="wall_south" size="2,0.1,0.5" movable="false">
-      <body position="0,-1,0" orientation="0,0,0" />
+    <box id="wall_south" size="6,0.1,0.5" movable="false">
+      <body position="0,-3,0" orientation="0,0,0" />
     </box>
-    <box id="wall_east" size="0.1,2,0.5" movable="false">
-      <body position="1,0,0" orientation="0,0,0" />
+    <box id="wall_east" size="0.1,6,0.5" movable="false">
+      <body position="3,0,0" orientation="0,0,0" />
     </box>
-    <box id="wall_west" size="0.1,2,0.5" movable="false">
-      <body position="-1,0,0" orientation="0,0,0" />
+    <box id="wall_west" size="0.1,6,0.5" movable="false">
+      <body position="-3,0,0" orientation="0,0,0" />
     </box>
 
     <!-- Place a foot-bot in the origin and bind it to the controller -->
@@ -219,8 +219,8 @@
 
       $ argos3 -q visualizations
   -->
-  <visualization>
+  <!--visualization>
     <qt-opengl />
-  </visualization>
-
+  </visualization-->
+<visualization />
 </argos-configuration>

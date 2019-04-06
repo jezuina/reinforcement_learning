@@ -4,7 +4,7 @@
  *  Created on: Sep 1, 2018
  *      Author: jkoroveshi
  */
-
+#include <fstream>
 #include <argos3/core/simulator/loop_functions.h>
 #include "object_tracking_loop_functions.h"
 #include <argos3/core/simulator/simulator.h>
@@ -39,6 +39,8 @@ CObjectTrackingLoopFunctions::CObjectTrackingLoopFunctions() :
 	previous_state[2] = 0;
 	previous_state[3] = 0;
 
+	accumulatedReward = 0;
+
 }
 
 
@@ -68,12 +70,12 @@ void CObjectTrackingLoopFunctions::Init(TConfigurationNode& t_tree) {
 	   CQuaternion cFBRot;
 
 	   /* Choose a random position */
-	   cFBPos.Set(0,0.2, 0.0f);
+	   cFBPos.Set(0,-0.1, 0.0f);
 	   CRadians r = CRadians(0);
 	   cFBRot.FromAngleAxis(r, CVector3::Z);
 	   bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
 
-	   cFBPos.Set(0, -0.1, 0.0f);
+	   cFBPos.Set(0, 0.2, 0.0f);
 	   bDone = MoveEntity(m_pcFootBot2->GetEmbodiedEntity(), cFBPos, cFBRot);
 
 }
@@ -83,11 +85,11 @@ void CObjectTrackingLoopFunctions::Init(TConfigurationNode& t_tree) {
 
 void CObjectTrackingLoopFunctions::Reset() {
 
-   std::cout<<"inside reseting "<<std::endl;
+   //std::cout<<"inside reseting "<<std::endl;
    //merret lista e te gjithe entiteteve te tipit foot-bot
    bool exists = false;
    		CSpace::TMapPerType& m_cFootbots = GetSpace().GetEntitiesByType("foot-bot");
-   	    std::cout<<"robots number "<<m_cFootbots.size()<<std::endl;
+   	    //std::cout<<"robots number "<<m_cFootbots.size()<<std::endl;
    			 for(CSpace::TMapPerType::iterator it = m_cFootbots.begin();it != m_cFootbots.end(); ++it)
    			 {
    				/* Get handle to foot-bot entity and controller */
@@ -105,9 +107,12 @@ void CObjectTrackingLoopFunctions::Reset() {
 
    if(exists)
    {
-	   std::cout<<"remove entity "<<std::endl;
-	 //  RemoveEntity(*m_pcFootBot1);
+	  // std::cout<<"remove entity "<<std::endl;
+	  // RemoveEntity(*m_pcFootBot1);
    }
+
+
+
 
    /* Create a RNG (it is automatically disposed of by ARGoS) */
    CRandom::CRNG* pcRNG = CRandom::CreateRNG("argos");
@@ -115,19 +120,19 @@ void CObjectTrackingLoopFunctions::Reset() {
    CQuaternion cFBRot;
 
    /* Choose a random position */
-   cFBPos.Set(0, 0.2, 0.0f);
+   cFBPos.Set(0, -0.1, 0.0f);
    CRadians r = CRadians(0);
    cFBRot.FromAngleAxis(r, CVector3::Z);
-   std::cout<<"adding entity2 "<<std::endl;
+   //std::cout<<"adding entity2 "<<std::endl;
    if(exists == false)
    {
 
 	   //krijohet roboti1
-	   	m_pcFootBot1 = new CFootBotEntity(
-	   	      "fb_0",    // entity id
-	   	      "fdc1"    // controller id as set in the XML
-	   	      );
-	   	   AddEntity(*m_pcFootBot1);
+	   //	m_pcFootBot1 = new CFootBotEntity(
+	   //	      "fb_0",    // entity id
+	   //	      "fdc1"    // controller id as set in the XML
+	   //	      );
+	   //	   AddEntity(*m_pcFootBot1);
 	   //	 bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
    }
 
@@ -159,13 +164,25 @@ void CObjectTrackingLoopFunctions::Reset() {
 	   y = 0.3;
    }
 
-   cFBPos.Set(0, -0.1, 0.0f);
+   cFBPos.Set(0, 0.2, 0.0f);
    bDone = MoveEntity(m_pcFootBot2->GetEmbodiedEntity(), cFBPos, cFBRot);
 
 
+   std::cout<<"perfundoi prova "<< trials_done <<std::endl;
+   std::ofstream outfile;
+
+   outfile.open("results.txt", std::ios_base::app);
+   if(trials_done == 0)
+   {
+	   outfile << "Prova\t" << "Episode\t" << "Reward" <<std::endl;
+
+   }
+   outfile << trials_done << "\t" << trial_steps_done << "\t" << accumulatedReward<<std::endl;
+   outfile.close();
    episodeLength[trials_done] = trial_steps_done;
    trials_done ++;
    trial_steps_done = 0;
+   accumulatedReward = 0;
 }
 
 /****************************************/
@@ -173,13 +190,13 @@ void CObjectTrackingLoopFunctions::Reset() {
 
 void CObjectTrackingLoopFunctions::PostStep() {
 
-	 argos::LOG << "steps "<< trial_steps_done << std::endl;
+	 //argos::LOG << "steps "<< trial_steps_done << std::endl;
 
 	//duhen mare te dhenat mbi gjendjen e re, dhe shperblimi
 	//keto duhet te perdoren per te perditesuar vleren e state-value
 
 	bool isEpisodeFInished = false;
-	std::cout<<"post step"<<std::endl;
+	//std::cout<<"post step"<<std::endl;
 
 	    //merret lista e te gjithe entiteteve te tipit foot-bot
 		CSpace::TMapPerType& m_cFootbots = GetSpace().GetEntitiesByType("foot-bot");
@@ -192,12 +209,14 @@ void CObjectTrackingLoopFunctions::PostStep() {
 				  CFootBotEntity& cFootBot = *any_cast<CFootBotEntity*>(it->second);
 
 				  std::string id = cFootBot.GetId();
-				  std::cout<<"id "<<id<<std::endl;
+				  //std::cout<<"id "<<id<<std::endl;
 				  if(id == "fb_1")//ky eshte foot-boti qe po trajnohet
 				  {
 					  CObstacleAvoidance& cController = dynamic_cast<CObstacleAvoidance&>(cFootBot.GetControllableEntity().GetController());
 					  //merret new state, reward dhe done
 					   int reward = cController.GetReward();
+
+					   accumulatedReward += reward;
 					   bool done = cController.IsEpisodeFinished();
 					   int action = cController.GetLastAction();
 
@@ -214,7 +233,17 @@ void CObjectTrackingLoopFunctions::PostStep() {
 					   new_experiment_state[2] = curr_state_bot[0];
 					   new_experiment_state[3] = curr_state_bot[1];
 
-					  cController.Remember(previous_state, action, new_experiment_state, reward, done);
+
+
+					   double new_experiment_state_rememeber[2];
+					   new_experiment_state_rememeber[0] = prev_state_bot[1];
+					   new_experiment_state_rememeber[1] = curr_state_bot[1];
+
+					   double previous_state_remember[2];
+					   previous_state_remember[0] = previous_state[1];
+					   previous_state_remember[1] = previous_state[3];
+
+					  cController.Remember(previous_state_remember, action, new_experiment_state_rememeber, reward, done);
 					  cController.Replay();
 					  cController.TargetTrain();
 
@@ -225,10 +254,10 @@ void CObjectTrackingLoopFunctions::PostStep() {
 					  previous_state[2] = new_experiment_state[2];
 					  previous_state[3] = new_experiment_state[3];
 
-					  if(cController.IsEpisodeFinished() == true)
+					  if(done  == true)
 					  {
 
-						 	   std::cout<<"reseting "<<id<<std::endl;
+						 	   //std::cout<<"reseting "<<id<<std::endl;
 						 	   Reset();
 						 	   break;
 					  }
@@ -249,9 +278,9 @@ void CObjectTrackingLoopFunctions::PostStep() {
 
 bool CObjectTrackingLoopFunctions::IsExperimentFinished()
 {
-	std::cout<<"is experiment finished "<<std::endl;
-	std::cout<<"trials done "<<trials_done<<std::endl;
-	std::cout<<"number of trials "<<number_of_trials<<std::endl;
+	//std::cout<<"is experiment finished "<<std::endl;
+	//std::cout<<"trials done "<<trials_done<<std::endl;
+	//std::cout<<"number of trials "<<number_of_trials<<std::endl;
 	if(trials_done == number_of_trials)
 	{
 
@@ -267,7 +296,7 @@ bool CObjectTrackingLoopFunctions::IsExperimentFinished()
 						  if(id == "fb_1")//ky eshte foot-boti qe po trajnohet
 						  {
 							  CObstacleAvoidance& cController = dynamic_cast<CObstacleAvoidance&>(cFootBot.GetControllableEntity().GetController());
-							  std::cout<<"saving model "<<std::endl;
+							  //std::cout<<"saving model "<<std::endl;
 							  cController.SaveModel();
 							  cController.WriteToFile(episodeLength, 200);
 						  }

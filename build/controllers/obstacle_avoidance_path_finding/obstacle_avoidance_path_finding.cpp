@@ -133,14 +133,18 @@ void CObstacleAvoidance::ControlStep() {
     double previous_state1[2];
     GetPreviousState(previous_state1);
 
-    double state[4];
-    state[0] = previous_state1[0];
-    state[1] = previous_state1[1];
-    state[2] = current_state[0];
-    state[3] = current_state[1];
+    //double state[4];
+    //state[0] = previous_state1[0];
+    //state[1] = previous_state1[1];
+    //state[2] = current_state[0];
+    //state[3] = current_state[1];
 
-    int action = otnn->callMethodAct(state,4);
-    std::cout<<"action "<<action<<std::endl;
+    double state[2];
+    state[0] = previous_state1[1];
+    state[1] = current_state[1];
+
+    int action = otnn->callMethodAct(state,2);
+    //std::cout<<"action "<<action<<std::endl;
     last_action = action;
 
     //0 majtas
@@ -161,13 +165,13 @@ void CObstacleAvoidance::ControlStep() {
 }
 
 void CObstacleAvoidance::Reset() {
- std::cout<<"reseting"<<std::endl;
+ //std::cout<<"reseting"<<std::endl;
 
 }
 
 bool CObstacleAvoidance::IsEpisodeFinished()
 {
-	std::cout<<"controlling is episode finished numberOfSteps "<<numberOfSteps<<std::endl;
+	//std::cout<<"controlling is episode finished numberOfSteps "<<numberOfSteps<<std::endl;
 	if(numberOfSteps == 0)
 		return false;
 
@@ -202,7 +206,52 @@ bool CObstacleAvoidance::IsEpisodeFinished()
 	if(bSomeoneFlashed == false)
 		return false;
 
-	if(cAccum.Length() < 35 && cAccum.Length() > 10 && bSomeoneFlashed)
+	if(cAccum.Length() > 35 || cAccum.Length() < 18)
+			return true;
+	else return false;
+
+	double kendi = cAccum.Angle().GetValue();
+	double previous_angle = previous_state[1];
+	//std::cout << "kendi  "<<kendi<<std::endl;
+	//std::cout << "kendi previous "<<previous_angle<<std::endl;
+	if(kendi < 0 && previous_angle < 0 )
+	{
+
+		kendi = kendi * -1;
+		previous_angle = previous_angle * -1;
+		//std::cout << "kendi negativ  "<<kendi<<std::endl;
+		//std::cout << "kendi previous negativ "<<previous_angle<<std::endl;
+		if(kendi > previous_angle)
+			{
+			std::cout << "mbaron eisodiiiidd "<<std::endl;
+			return true;
+			}
+		else
+		{
+			return false;
+		}
+	}
+	else if(kendi < 0 && previous_angle > 0)
+	{
+		std::cout << "2 "<<std::endl;
+		return false;
+	}
+	else if(kendi > 0 && previous_angle < 0)
+	{
+		std::cout << "3 "<<std::endl;
+		return false;
+	}
+	else if (kendi > 0 && previous_angle > 0)
+	{
+		std::cout << "3 "<<std::endl;
+		if(kendi > previous_angle)
+			return true;
+		else return false;
+	}
+	else return false;
+
+	std::cout << "4 "<<std::endl;
+	if(cAccum.Length() < 35 && cAccum.Length() > 18 && bSomeoneFlashed)
 		return false;
 	else return true;
 
@@ -231,16 +280,54 @@ int CObstacleAvoidance::GetReward()
 	cAccum /= sBlobs.BlobList.size();
 
 	distanca = cAccum.Length();//gjatesia cm
-	std::cout << "get reward gjatesia "<<distanca<<std::endl;
-	if(distanca < 35 && distanca > 10)
-		return 1;
-	else return 0;
+	double kendi = cAccum.Angle().GetValue();
+
+	//std::cout << "get reward gjatesia "<<distanca<<std::endl;
+	if(distanca > 35 || distanca < 18)
+		return -100;
+
+	//distanca paraardhese
+	double previous_distance = previous_state[0];
+	double previous_angle = previous_state[1];
+
+
+
+	    if(kendi < 0 && previous_angle < 0 )
+		{
+			kendi = kendi * -1;
+			previous_angle = previous_angle * -1;
+
+			if(kendi > previous_angle) return -10;
+			else return 1;
+		}
+		else if(kendi < 0 && previous_angle > 0)
+		{
+			return -10;
+		}
+		else if(kendi > 0 && previous_angle < 0)
+		{
+			return -10;
+		}
+		else if (kendi > 0 && previous_angle > 0)
+		{
+			if(kendi > previous_angle)
+				return -10;
+			else return 1;
+		}
+		else return 1;
+
+
+
+
+	if(kendi <= previous_angle) return 1;
+	else return -10;
+
 }
 
 
 void CObstacleAvoidance::Remember(double current_state[], int action, double new_state[], int reward, bool done)
 {
-   otnn->callMethodRemember(current_state,action,reward,new_state,done,4);
+   otnn->callMethodRemember(current_state,action,reward,new_state,done,2);
 }
 
 void CObstacleAvoidance::WriteToFile(int episodeLength[], int dimension)
@@ -286,7 +373,7 @@ void CObstacleAvoidance::GetCurrentState(double state[])
 	cAccum /= sBlobs.BlobList.size();
 
 	//std::cout << "pas pjesetimi "<<std::endl;
-	std::cout << "pas pjesetimit gjatesia  "<<cAccum.Length()<<std::endl;
+	//std::cout << "pas pjesetimit gjatesia  "<<cAccum.Length()<<std::endl;
 	//std::cout << "pas pjesetimit kendi  "<<cAccum.Angle().GetValue()<<std::endl;
 
 	state[0] = cAccum.Length();//gjatesia cm

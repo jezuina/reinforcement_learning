@@ -15,7 +15,9 @@ using namespace std;
 ObjectTrackingNeuralNetwork::ObjectTrackingNeuralNetwork()
     {
 	   Py_Initialize();
-	   char *args[1] = {"/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/build/controllers/obstacle_avoidance_path_finding/ObjectTrackingNeuralNetwork.py"};
+	   //char *args[1] = {"/home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/build/controllers/obstacle_avoidance_path_finding/ObjectTrackingNeuralNetwork.py"};
+	   char *args[1] = {"./ObjectTrackingNeuralNetwork.py"};
+
 	   PySys_SetArgv(1,args); // must call this to get sys.argv and relative imports
 
 
