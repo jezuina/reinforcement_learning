@@ -46,6 +46,8 @@ private:
    double previous_state[4];
    int episodeLength[200];
    long int accumulatedReward;
+   int turn;
+   bool skipFirst = true;
 };
 
 #endif

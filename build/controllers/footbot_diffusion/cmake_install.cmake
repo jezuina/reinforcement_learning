@@ -1,4 +1,4 @@
-# Install script for directory: /home/jkoroveshi/argos3-examples-master/controllers/footbot_diffusion
+# Install script for directory: /home/jkoroveshi/eclipse-workspace/argos3_examples@argos3-examples-master/controllers/footbot_diffusion
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

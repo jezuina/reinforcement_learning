@@ -104,6 +104,7 @@ public:
 
    virtual void GetCurrentState(double state[]);
    virtual void GetPreviousState(double state[]);
+   virtual void GetPreviousCurrent(double state[]);
    virtual void SetPreviousState(double state[]);
    virtual void Remember(double current_state[], int action, double new_state[], int reward, bool done);
    virtual void Replay();
@@ -111,6 +112,9 @@ public:
    virtual int GetLastAction();
    virtual void SaveModel();
    virtual void WriteToFile(int episodeLength[], int dimension);
+   virtual void setTurn(int t);
+   virtual void setHasTurn(bool t);
+   virtual int getTurn();
    /* Pointer to the positioning sensor */
      CCI_PositioningSensor* m_pcPosSens;
 private:
@@ -161,7 +165,10 @@ private:
 
    //previous state
    double previous_state[2];
+   double previous_current[2];
    int last_action;
+   bool hasTurn;
+   int turn;
 };
 
 #endif

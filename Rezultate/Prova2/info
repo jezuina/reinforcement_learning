@@ -1,0 +1,18 @@
+KOntrolli kryhet 
+distanca > distanca previous || kendi > kendi_previous
+
+self.state_dimension=4
+	self.action_space=4
+        self.memory  = deque(maxlen=2000)
+        #importojme te dhenat e memorjes
+	filehandler = open("remember", 'r') 
+	self.memory = pickle.load(filehandler)
+        self.gamma = 0.85
+	#ishte 50
+        self.epsilon = 0.01
+        self.epsilon_min = 0.01
+        self.epsilon_decay = 0.995
+        self.learning_rate = 0.08
+        self.tau = .125
+
+jane kryer 88 prova

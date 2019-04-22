@@ -29,6 +29,10 @@ CObstacleAvoidance::CObstacleAvoidance() :
 	otnn = new ObjectTrackingNeuralNetwork;
 	previous_state[0] = 0;
 	previous_state[1] = 0;
+	previous_current[0] = 0;
+	previous_current[1] = 0;
+	turn = 1;
+	hasTurn = false;
 
 }
 
@@ -87,6 +91,7 @@ void CObstacleAvoidance::Init(TConfigurationNode& t_node) {
    /* Switch the camera on */
    m_pcCamera->Enable();
 
+
    //python
 
 
@@ -110,7 +115,18 @@ void CObstacleAvoidance::Init(TConfigurationNode& t_node) {
 
 /****************************************/
 /****************************************/
-
+void CObstacleAvoidance::setTurn(int t)
+{
+	turn = t;
+}
+void CObstacleAvoidance::setHasTurn(bool t)
+{
+	hasTurn = t;
+}
+int CObstacleAvoidance::getTurn()
+{
+	return turn;
+}
 void CObstacleAvoidance::ControlStep() {
 
 	//lexohen te dhenat e sensorit te drites
@@ -127,40 +143,73 @@ void CObstacleAvoidance::ControlStep() {
 	//std::cout << "kendi rezultat "<<cAngle<<std::endl;
 
 	//lexojme nga sensoret gjendjen aktuale
-    double current_state[2];
-    GetCurrentState(current_state);
+	double current_state[2];
+	GetCurrentState(current_state);
+	//std::cout<<"current ne controller"<<current_state[0]<<" "<<current_state[1]<<std::endl;
 
-    double previous_state1[2];
-    GetPreviousState(previous_state1);
+	if(hasTurn == false)//hera e pare e episodit
+	{
+		previous_state[0] = 0;
+		previous_state[1] = 0;
+		previous_current[0] = current_state[0];
+		previous_current[1] = current_state[1];
+		hasTurn = true;
+		std::cout<<"nuk eshhte radha previous state"<<previous_state[0]<<" "<<previous_state[1]<<std::endl;
+		std::cout<<"nuk eshhte radha previous current state"<<previous_current[0]<<" "<<previous_current[1]<<std::endl;
 
-    //double state[4];
-    //state[0] = previous_state1[0];
-    //state[1] = previous_state1[1];
-    //state[2] = current_state[0];
-    //state[3] = current_state[1];
+		return;
+	}
+	else//fillon nga hera e dyte
+	{
+		if((turn % 2) == 1)//nqs nuk eshte radha e tij, resetojme vlerat
+		{
+			previous_state[0] = previous_current[0];
+			previous_state[1] = previous_current[1];
+			previous_current[0] = current_state[0];
+			previous_current[1] = current_state[1];
+			std::cout<<"eshhte radha previous state"<<previous_state[0]<<" "<<previous_state[1]<<std::endl;
+			std::cout<<"eshhte radha previous current state"<<previous_current[0]<<" "<<previous_current[1]<<std::endl;
 
-    double state[2];
-    state[0] = previous_state1[1];
-    state[1] = current_state[1];
+		}
+		else//radha e tij, do zgjedhe veprimin
+		{
+			double previous_state1[2];
+			    GetPreviousState(previous_state1);
+			    //std::cout<<"previous ne controller"<<previous_state1[0]<<" "<<previous_state1[1]<<std::endl;
 
-    int action = otnn->callMethodAct(state,2);
-    //std::cout<<"action "<<action<<std::endl;
-    last_action = action;
+			    double state[4];
+			    state[0] = previous_state1[0];
+			    state[1] = previous_state1[1];
+			    state[2] = previous_current[0];
+			    state[3] = previous_current[1];
 
-    //0 majtas
-    //1 djathtas
-    //2 drejt
-    //4 no action
 
-    if(action == 0)
-    	m_pcWheels->SetLinearVelocity(0, m_fWheelVelocity);
-    else if(action == 1)
-    	m_pcWheels->SetLinearVelocity(m_fWheelVelocity, 0);
-    else if(action == 2)
-    	m_pcWheels->SetLinearVelocity(m_fWheelVelocity, m_fWheelVelocity);
-    else m_pcWheels->SetLinearVelocity(0, 0);
+			    //std::cout<<"exec f2"<<std::endl;
+			    int action = otnn->callMethodAct(state,4);
+			    last_action = action;
 
-   numberOfSteps ++;
+			    //0 majtas
+			    //1 djathtas
+			    //2 drejt
+			    //4 no action
+
+			    if(action == 0)
+			    	m_pcWheels->SetLinearVelocity(0, m_fWheelVelocity);
+			    else if(action == 1)
+			    	m_pcWheels->SetLinearVelocity(m_fWheelVelocity, 0);
+			    else if(action == 2)
+			    	m_pcWheels->SetLinearVelocity(m_fWheelVelocity, m_fWheelVelocity);
+			    else m_pcWheels->SetLinearVelocity(0, 0);
+
+			   numberOfSteps ++;
+
+
+
+		}
+
+	}
+
+
 
 }
 
@@ -176,16 +225,16 @@ bool CObstacleAvoidance::IsEpisodeFinished()
 		return false;
 
 	//proximity sensor
-	//const CCI_FootBotProximitySensor::TReadings& tProxReads = m_pcProximity->GetReadings();
+	const CCI_FootBotProximitySensor::TReadings& tProxReads = m_pcProximity->GetReadings();
 	/* Sum them together */
-	/*CVector2 cAccumulator;
+	CVector2 cAccumulator;
 	for(size_t i = 0; i < tProxReads.size(); ++i)
 	{
 	    cAccumulator += CVector2(tProxReads[i].Value, tProxReads[i].Angle);
 	}
 	cAccumulator /= tProxReads.size();
-	CRadians cAngle = cAccumulator.Angle();
-	Real cValue = cAccumulator.Length();*/
+	double cAngle = cAccumulator.Angle().GetValue();
+	Real cValue = cAccumulator.Length();
 
 
 	//camera sensor
@@ -194,7 +243,7 @@ bool CObstacleAvoidance::IsEpisodeFinished()
 	/*
 	* Check whether someone sent a 1, which means 'flash'
 	*/
-	Real distanca =0;
+	double distanca =0;
 	bool bSomeoneFlashed = false;
 	CVector2 cAccum;
 	for(size_t i = 0; i < sBlobs.BlobList.size(); ++i) {
@@ -206,14 +255,43 @@ bool CObstacleAvoidance::IsEpisodeFinished()
 	if(bSomeoneFlashed == false)
 		return false;
 
+	distanca = cAccum.Length();
+
+	double distanca_previous = previous_current[0];
+	//std::cout << "distanca  "<<distanca<<std::endl;
+	//std::cout << "distanca previous "<<distanca_previous<<std::endl;
+
+	double kendi = cAccum.Angle().GetValue();
+	double previous_angle = previous_current[1];
+	//std::cout << "kendi  "<<kendi<<std::endl;
+	//std::cout << "kendi previous "<<previous_angle<<std::endl;
+
+
+	//if(cAccum.Length() > 35 || cAccum.Length() < 18)
+	//return true;
+	//else return false;
+
+	//double dif_distanca = distanca - distanca_previous;
+	//if(dif_distanca < 0) dif_distanca = (-1)* dif_distanca;
+
+	//double dif_kendi = kendi - previous_angle;
+	//if(dif_kendi < 0) dif_kendi = (-1) * dif_kendi;
+	//std::cout << "kendi  "<<dif_kendi<<std::endl;
+	//std::cout << "distanca  "<<dif_distanca<<std::endl;
+
+	if(cValue > distanca_previous || cAngle > previous_angle)
+		return true;
+	else return false;
+
+	if(distanca >= 2* distanca_previous && kendi >= 2*previous_angle)
+		return true;
+	else return false;
+
 	if(cAccum.Length() > 35 || cAccum.Length() < 18)
 			return true;
 	else return false;
 
-	double kendi = cAccum.Angle().GetValue();
-	double previous_angle = previous_state[1];
-	//std::cout << "kendi  "<<kendi<<std::endl;
-	//std::cout << "kendi previous "<<previous_angle<<std::endl;
+
 	if(kendi < 0 && previous_angle < 0 )
 	{
 
@@ -221,7 +299,7 @@ bool CObstacleAvoidance::IsEpisodeFinished()
 		previous_angle = previous_angle * -1;
 		//std::cout << "kendi negativ  "<<kendi<<std::endl;
 		//std::cout << "kendi previous negativ "<<previous_angle<<std::endl;
-		if(kendi > previous_angle)
+		if(kendi > 2 * previous_angle)
 			{
 			std::cout << "mbaron eisodiiiidd "<<std::endl;
 			return true;
@@ -244,7 +322,7 @@ bool CObstacleAvoidance::IsEpisodeFinished()
 	else if (kendi > 0 && previous_angle > 0)
 	{
 		std::cout << "3 "<<std::endl;
-		if(kendi > previous_angle)
+		if(kendi > 2 * previous_angle)
 			return true;
 		else return false;
 	}
@@ -259,6 +337,20 @@ bool CObstacleAvoidance::IsEpisodeFinished()
 
 int CObstacleAvoidance::GetReward()
 {
+	//lexojme nga proximity sensor
+		/* Get readings from proximity sensor */
+		   const CCI_FootBotProximitySensor::TReadings& tProxReads = m_pcProximity->GetReadings();
+		   /* Sum them together */
+		   CVector2 cAccumulator;
+		   for(size_t i = 0; i < tProxReads.size(); ++i) {
+		      cAccumulator += CVector2(tProxReads[i].Value, tProxReads[i].Angle);
+		   }
+		   cAccumulator /= tProxReads.size();
+
+
+
+
+
 	//lexohen te dhenat nga sensori i kameras
 
 	/* Get led color of nearby robots */
@@ -279,16 +371,32 @@ int CObstacleAvoidance::GetReward()
 
 	cAccum /= sBlobs.BlobList.size();
 
-	distanca = cAccum.Length();//gjatesia cm
-	double kendi = cAccum.Angle().GetValue();
+	distanca = cAccumulator.Length();//gjatesia cm
+	double kendi = cAccumulator.Angle().GetValue();
+
+	//distanca paraardhese
+	double previous_distance = previous_current[0];
+	double previous_angle = previous_current[1];
+
+	//std::cout << "get reward gjatesia "<<distanca<<std::endl;
+	//if(distanca > 35 || distanca < 18)
+	//return -100;
+
+	//double dif_distanca = distanca - previous_distance;
+	//if(dif_distanca < 0) dif_distanca = (-1)* dif_distanca;
+
+	//double dif_kendi = kendi - previous_angle;
+	//if(dif_kendi < 0) dif_kendi = (-1) * dif_kendi;
+
+	if(distanca > previous_distance || kendi > previous_angle)
+		return -10;
+	else return 1;
 
 	//std::cout << "get reward gjatesia "<<distanca<<std::endl;
 	if(distanca > 35 || distanca < 18)
 		return -100;
 
-	//distanca paraardhese
-	double previous_distance = previous_state[0];
-	double previous_angle = previous_state[1];
+
 
 
 
@@ -297,7 +405,7 @@ int CObstacleAvoidance::GetReward()
 			kendi = kendi * -1;
 			previous_angle = previous_angle * -1;
 
-			if(kendi > previous_angle) return -10;
+			if(kendi >2 * previous_angle) return -10;
 			else return 1;
 		}
 		else if(kendi < 0 && previous_angle > 0)
@@ -310,7 +418,7 @@ int CObstacleAvoidance::GetReward()
 		}
 		else if (kendi > 0 && previous_angle > 0)
 		{
-			if(kendi > previous_angle)
+			if(kendi > 2* previous_angle)
 				return -10;
 			else return 1;
 		}
@@ -327,7 +435,7 @@ int CObstacleAvoidance::GetReward()
 
 void CObstacleAvoidance::Remember(double current_state[], int action, double new_state[], int reward, bool done)
 {
-   otnn->callMethodRemember(current_state,action,reward,new_state,done,2);
+   otnn->callMethodRemember(current_state,action,reward,new_state,done,4);
 }
 
 void CObstacleAvoidance::WriteToFile(int episodeLength[], int dimension)
@@ -342,6 +450,20 @@ void CObstacleAvoidance::SaveModel()
 
 void CObstacleAvoidance::GetCurrentState(double state[])
 {
+	//lexojme nga proximity sensor
+	/* Get readings from proximity sensor */
+	   //const CCI_FootBotProximitySensor::TReadings& tProxReads = m_pcProximity->GetReadings();
+	   /* Sum them together */
+	   CVector2 cAccumulator;
+	   //for(size_t i = 0; i < tProxReads.size(); ++i) {
+	   //   cAccumulator += CVector2(tProxReads[i].Value, tProxReads[i].Angle);
+	   //}
+	   //cAccumulator /= tProxReads.size();
+	   //state[0] = cAccumulator.Length();//gjatesia cm
+	   //state[1] = cAccumulator.Angle().GetValue();//kendi radian
+
+
+
 
 	//camera sensor
 	/* Get led color of nearby robots */
@@ -385,6 +507,12 @@ void CObstacleAvoidance::GetPreviousState(double state[])
 {
 	state[0] = previous_state[0];//gjatesia
 	state[1] = previous_state[1];//kendi
+}
+
+void CObstacleAvoidance::GetPreviousCurrent(double state[])
+{
+	state[0] = previous_current[0];//gjatesia
+	state[1] = previous_current[1];//kendi
 }
 
 void CObstacleAvoidance::SetPreviousState(double state[])

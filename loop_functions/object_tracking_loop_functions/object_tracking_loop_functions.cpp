@@ -40,6 +40,8 @@ CObjectTrackingLoopFunctions::CObjectTrackingLoopFunctions() :
 	previous_state[3] = 0;
 
 	accumulatedReward = 0;
+	turn = 1;
+
 
 }
 
@@ -70,7 +72,7 @@ void CObjectTrackingLoopFunctions::Init(TConfigurationNode& t_tree) {
 	   CQuaternion cFBRot;
 
 	   /* Choose a random position */
-	   cFBPos.Set(0,-0.1, 0.0f);
+	   cFBPos.Set(0.2,0.2, 0.0f);
 	   CRadians r = CRadians(0);
 	   cFBRot.FromAngleAxis(r, CVector3::Z);
 	   bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
@@ -136,8 +138,7 @@ void CObjectTrackingLoopFunctions::Reset() {
 	   //	 bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
    }
 
-   //levizim footbotin 1
-   bool bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
+
 
    float x =0;
    float y = 0;
@@ -165,7 +166,16 @@ void CObjectTrackingLoopFunctions::Reset() {
    }
 
    cFBPos.Set(0, 0.2, 0.0f);
-   bDone = MoveEntity(m_pcFootBot2->GetEmbodiedEntity(), cFBPos, cFBRot);
+   //cFBPos.Set(x, y, 0.0f);
+   bool bDone = MoveEntity(m_pcFootBot2->GetEmbodiedEntity(), cFBPos, cFBRot);
+
+
+   cFBPos.Set(0.2, 0.2, 0.0f);
+   r = CRadians(0);
+   cFBRot.FromAngleAxis(r, CVector3::Z);
+
+   //levizim footbotin 1
+   bDone = MoveEntity(m_pcFootBot1->GetEmbodiedEntity(), cFBPos, cFBRot);
 
 
    std::cout<<"perfundoi prova "<< trials_done <<std::endl;
@@ -183,6 +193,7 @@ void CObjectTrackingLoopFunctions::Reset() {
    trials_done ++;
    trial_steps_done = 0;
    accumulatedReward = 0;
+   skipFirst = true;
 }
 
 /****************************************/
@@ -209,65 +220,136 @@ void CObjectTrackingLoopFunctions::PostStep() {
 				  CFootBotEntity& cFootBot = *any_cast<CFootBotEntity*>(it->second);
 
 				  std::string id = cFootBot.GetId();
+				  if(id == "fb_0")//ky eshte foot-boti target
+				  {
+
+				  }
 				  //std::cout<<"id "<<id<<std::endl;
-				  if(id == "fb_1")//ky eshte foot-boti qe po trajnohet
+				  else if(id == "fb_1")//ky eshte foot-boti qe po trajnohet
 				  {
 					  CObstacleAvoidance& cController = dynamic_cast<CObstacleAvoidance&>(cFootBot.GetControllableEntity().GetController());
-					  //merret new state, reward dhe done
-					   int reward = cController.GetReward();
 
-					   accumulatedReward += reward;
-					   bool done = cController.IsEpisodeFinished();
-					   int action = cController.GetLastAction();
 
+					   int turn = cController.getTurn();
+					   //nqs eshte prova e pare
+					   //nuk bejme asnje veprim
+					   if(skipFirst == true)
+					   {
+						   turn = turn + 1;
+						   cController.setTurn(turn);
+						   skipFirst = false;
+						   return;
+					   }
+
+					   //merret new state, reward dhe done
+					   if((turn % 2) ==0)
+					   {
+
+					   //marim state qe ka bere act
 					   //nga foot boti merren leximet per dy gjendjen e fundit
 					   double prev_state_bot[2];
-					   double curr_state_bot[2];
+					   double previous_current[2];
 
 					   cController.GetPreviousState(prev_state_bot);
-					   cController.GetCurrentState(curr_state_bot);
+					   //std::cout<<"previous "<<prev_state_bot[0]<<" "<<prev_state_bot[1]<<std::endl;
+					   cController.GetPreviousCurrent(previous_current);
+					   //std::cout<<"current previous"<<previous_current[0]<<" "<<previous_current[1]<<std::endl;
 
-					   double new_experiment_state[4];
-					   new_experiment_state[0] = prev_state_bot[0];
-					   new_experiment_state[1] = prev_state_bot[1];
-					   new_experiment_state[2] = curr_state_bot[0];
-					   new_experiment_state[3] = curr_state_bot[1];
+					   previous_state[0] = prev_state_bot[0];
+					   previous_state[1] = prev_state_bot[1];
+					   previous_state[2] = previous_current[0];
+					   previous_state[3] = previous_current[1];
+
+					   turn = turn +1;
+				       cController.setTurn(turn);
+				    }
+					else
+					{
+						//marrim gjendjen e re ku ka shkuar
+						double curr_state_bot[2];
+						cController.GetCurrentState(curr_state_bot);
+						//std::cout<<"current "<<curr_state_bot[0]<<" "<<curr_state_bot[1]<<std::endl;
+
+						//marrim action e fundit qe eshte bere
+						int action = cController.GetLastAction();
+
+						//marrim reward, ketu shfaqet gjendja e updateuar nga veprimi paraardhes
+						//reward e llogaritim nga dy gjendjen e fundit gjatesi kend
+						double distanca_previous = previous_state[2];
+						double kendi_previous = previous_state[3];
+
+						double distanca_current = curr_state_bot[0];
+						double kendi_current = curr_state_bot[1];
+
+						double dif_distance = distanca_current - distanca_previous;
+
+						if(dif_distance < 0) dif_distance = dif_distance * (-1);
+
+						double dif_kend = kendi_current - kendi_previous;
+
+						std::cout<<"dif distanca "<<dif_distance<<" dif kendi"<<dif_kend<<std::endl;
+
+						if(dif_kend < 0) dif_kend = dif_kend * (-1);
+
+						int reward;
+						if(dif_kend > 0.5 || dif_distance > 0.5)
+							reward = -1;
+						else reward = +1;
+
+						//if(distanca_current > distanca_previous || kendi_current > kendi_previous)
+						//	reward = -1;
+						//else reward = +1;
+					    accumulatedReward += reward;
+
+					    //llogaritim nese ka perfunduar episodi
+					    std::cout<<"distanca "<<distanca_current<<" "<<distanca_previous<<std::endl;
+					    std::cout<<"kendi "<<kendi_current<<" "<<kendi_previous<<std::endl;
+
+					    bool done;
+					    if(dif_kend > 0.5 || dif_distance > 0.5)
+					       done = true;
+					    else done = false;
+
+					    //if(distanca_current > distanca_previous || kendi_current > kendi_previous)
+						//	done = true;
+						//else done = false;
+
+						//bejme remember
+					    double new_experiment_state[4];
+					    new_experiment_state[0] = previous_state[2];
+					    new_experiment_state[1] = previous_state[3];
+					    new_experiment_state[2] = curr_state_bot[0];
+					    new_experiment_state[3] = curr_state_bot[1];
+
+					    cController.Remember(previous_state, action, new_experiment_state, reward, done);
+					    cController.Replay();
+					    cController.TargetTrain();
+
+						turn = turn +1;
+						cController.setTurn(turn);
+
+						trial_steps_done ++;
+						//nqs mbaroi episodi, bejme reset
+						if(done  == true)
+					    {
+							double previous[2] ={0,0};
+							cController.SetPreviousState(previous);
+							cController.setHasTurn(false);
+							cController.setTurn(1);
+						   //std::cout<<"reseting "<<id<<std::endl;
+						   Reset();
+						   break;
+					    }
 
 
 
-					   double new_experiment_state_rememeber[2];
-					   new_experiment_state_rememeber[0] = prev_state_bot[1];
-					   new_experiment_state_rememeber[1] = curr_state_bot[1];
+					}
 
-					   double previous_state_remember[2];
-					   previous_state_remember[0] = previous_state[1];
-					   previous_state_remember[1] = previous_state[3];
-
-					  cController.Remember(previous_state_remember, action, new_experiment_state_rememeber, reward, done);
-					  cController.Replay();
-					  cController.TargetTrain();
-
-					  cController.SetPreviousState(curr_state_bot);
-
-					  previous_state[0] = new_experiment_state[0];
-					  previous_state[1] = new_experiment_state[1];
-					  previous_state[2] = new_experiment_state[2];
-					  previous_state[3] = new_experiment_state[3];
-
-					  if(done  == true)
-					  {
-
-						 	   //std::cout<<"reseting "<<id<<std::endl;
-						 	   Reset();
-						 	   break;
-					  }
                  }
 
 			 }
 
-
 	 //trial_steps_done: bejme reset nqs arrihet numri i hereve qe zhvillohet nje episod
-	 trial_steps_done ++;
 
 	 if(trial_steps_done == trial_length)
 	 {

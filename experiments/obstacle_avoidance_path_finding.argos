@@ -97,7 +97,7 @@
           controller's header file in
           controllers/footbot_diffusion/footbot_diffusion.h.
       -->
-      <params alpha="7.5" delta="0.1" velocity="5" />
+      <params alpha="1.5" delta="0.1" velocity="5" />
     </obstacle_avoidance_controller>
 
  <footbot_diffusion_controller id="fdc1"
@@ -113,7 +113,7 @@
         <colored_blob_omnidirectional_camera implementation="rot_z_only" medium="leds" show_rays="false" />
       </sensors>
     
-      <params alpha="7.5" delta="0.1" velocity="5" />
+      <params alpha="1.5" delta="0.1" velocity="5" />
     </footbot_diffusion_controller>
   </controllers>
 
