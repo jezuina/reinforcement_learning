@@ -94,11 +94,14 @@ void CFootBotDiffusion::ControlStep() {
 	    return;
 	   }
 
+
+
    //std::cout<<"exec f1 "<<std::endl;
    //gjenerojme lvizjet random
    srand(time(0));
    int n = rand() % (100);
 
+   //n = 1; //drejt
    //prob 50% shkon drejt
    if(n < 50)
    {

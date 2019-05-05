@@ -235,34 +235,48 @@ void CObjectTrackingLoopFunctions::PostStep() {
 					   //nuk bejme asnje veprim
 					   if(skipFirst == true)
 					   {
+						   double current_state_bot[2];
+						   cController.GetCurrentState(current_state_bot);
+
+						   previous_state[0] = current_state_bot[0];
+						   previous_state[1] = current_state_bot[1];
+
 						   turn = turn + 1;
 						   cController.setTurn(turn);
 						   skipFirst = false;
 						   return;
 					   }
-
-					   //merret new state, reward dhe done
+					   //ka qene radha e agjentit
+					   //ketu shikohet rezultati i veprimit paraardhes te targetit
+					   //agjenti nuk ben gje ketu
+					   //vetem ruajme gjendjen e re te targetit tek previous state
 					   if((turn % 2) ==0)
 					   {
 
 					   //marim state qe ka bere act
 					   //nga foot boti merren leximet per dy gjendjen e fundit
-					   double prev_state_bot[2];
-					   double previous_current[2];
+					   //double prev_state_bot[2];
+					   //double previous_current[2];
 
-					   cController.GetPreviousState(prev_state_bot);
+					   //cController.GetPreviousState(prev_state_bot);
 					   //std::cout<<"previous "<<prev_state_bot[0]<<" "<<prev_state_bot[1]<<std::endl;
-					   cController.GetPreviousCurrent(previous_current);
+					   //cController.GetPreviousCurrent(previous_current);
 					   //std::cout<<"current previous"<<previous_current[0]<<" "<<previous_current[1]<<std::endl;
 
-					   previous_state[0] = prev_state_bot[0];
-					   previous_state[1] = prev_state_bot[1];
-					   previous_state[2] = previous_current[0];
-					   previous_state[3] = previous_current[1];
+					   double current_state_bot[2];
+					   cController.GetCurrentState(current_state_bot);
+
+					   previous_state[0] = current_state_bot[0];
+					   previous_state[1] = current_state_bot[1];
+					   //previous_state[2] = previous_current[0];
+					   //previous_state[3] = previous_current[1];
+					   std::cout<<"post step nuk eshte radha agjent "<<"current state "<<current_state_bot[0]<<" "<<current_state_bot[1]<<std::endl;
 
 					   turn = turn +1;
 				       cController.setTurn(turn);
 				    }
+					//ketu ka vepruar targeti, por rezultati i tij nuk duket ketu
+					//ketu shohim rezultatin e veprimit te meparshem te agjentit
 					else
 					{
 						//marrim gjendjen e re ku ka shkuar
@@ -275,26 +289,32 @@ void CObjectTrackingLoopFunctions::PostStep() {
 
 						//marrim reward, ketu shfaqet gjendja e updateuar nga veprimi paraardhes
 						//reward e llogaritim nga dy gjendjen e fundit gjatesi kend
-						double distanca_previous = previous_state[2];
-						double kendi_previous = previous_state[3];
+						double distanca_previous = previous_state[0];
+						double kendi_previous = previous_state[1];
 
 						double distanca_current = curr_state_bot[0];
 						double kendi_current = curr_state_bot[1];
 
-						double dif_distance = distanca_current - distanca_previous;
+						std::cout<<"post step agjent "<<"previous state "<<distanca_previous<<" "<<kendi_previous<<std::endl;
+						std::cout<<"post step agjent "<<"current state "<<distanca_current<<" "<<kendi_current<<std::endl;
 
-						if(dif_distance < 0) dif_distance = dif_distance * (-1);
+						//double dif_distance = distanca_current - distanca_previous;
 
-						double dif_kend = kendi_current - kendi_previous;
+						//if(dif_distance < 0) dif_distance = dif_distance * (-1);
 
-						std::cout<<"dif distanca "<<dif_distance<<" dif kendi"<<dif_kend<<std::endl;
+						//double dif_kend = kendi_current - kendi_previous;
 
-						if(dif_kend < 0) dif_kend = dif_kend * (-1);
+						//std::cout<<"dif distanca "<<dif_distance<<" dif kendi"<<dif_kend<<std::endl;
+
+						//if(dif_kend < 0) dif_kend = dif_kend * (-1);
 
 						int reward;
-						if(dif_kend > 0.5 || dif_distance > 0.5)
-							reward = -1;
+						if(distanca_current > 22 || distanca_current < 18) reward = -10;
 						else reward = +1;
+
+						//if(dif_kend > 0.5 || dif_distance > 0.5)
+						//	reward = -1;
+						//else reward = +1;
 
 						//if(distanca_current > distanca_previous || kendi_current > kendi_previous)
 						//	reward = -1;
@@ -302,26 +322,39 @@ void CObjectTrackingLoopFunctions::PostStep() {
 					    accumulatedReward += reward;
 
 					    //llogaritim nese ka perfunduar episodi
-					    std::cout<<"distanca "<<distanca_current<<" "<<distanca_previous<<std::endl;
-					    std::cout<<"kendi "<<kendi_current<<" "<<kendi_previous<<std::endl;
+					    //std::cout<<"distanca "<<distanca_current<<" "<<distanca_previous<<std::endl;
+					    //std::cout<<"kendi "<<kendi_current<<" "<<kendi_previous<<std::endl;
 
 					    bool done;
-					    if(dif_kend > 0.5 || dif_distance > 0.5)
-					       done = true;
+					    //if(dif_kend > 0.5 || dif_distance > 0.5)
+					    //   done = true;
+					    //else done = false;
+
+					    if(distanca_current > 22 || distanca_current < 18) done = true;
 					    else done = false;
+
 
 					    //if(distanca_current > distanca_previous || kendi_current > kendi_previous)
 						//	done = true;
 						//else done = false;
 
 						//bejme remember
-					    double new_experiment_state[4];
-					    new_experiment_state[0] = previous_state[2];
-					    new_experiment_state[1] = previous_state[3];
-					    new_experiment_state[2] = curr_state_bot[0];
-					    new_experiment_state[3] = curr_state_bot[1];
+					    //double new_experiment_state[4];
+					    //new_experiment_state[0] = previous_state[2];
+					    //new_experiment_state[1] = previous_state[3];
+					    //new_experiment_state[2] = curr_state_bot[0];
+					    //new_experiment_state[3] = curr_state_bot[1];
 
-					    cController.Remember(previous_state, action, new_experiment_state, reward, done);
+					    double previous_state_to_remember[2];
+					    previous_state_to_remember[0] = previous_state[0];
+						previous_state_to_remember[1] = previous_state[1];
+
+						double current_state_to_remember[2];
+						current_state_to_remember[0] = curr_state_bot[0];
+						current_state_to_remember[1] = curr_state_bot[1];
+
+
+					    cController.Remember(previous_state_to_remember, action, current_state_to_remember, reward, done);
 					    cController.Replay();
 					    cController.TargetTrain();
 
@@ -340,17 +373,11 @@ void CObjectTrackingLoopFunctions::PostStep() {
 						   Reset();
 						   break;
 					    }
-
-
-
 					}
-
                  }
-
 			 }
 
 	 //trial_steps_done: bejme reset nqs arrihet numri i hereve qe zhvillohet nje episod
-
 	 if(trial_steps_done == trial_length)
 	 {
 		 Reset();

@@ -154,8 +154,8 @@ void CObstacleAvoidance::ControlStep() {
 		previous_current[0] = current_state[0];
 		previous_current[1] = current_state[1];
 		hasTurn = true;
-		std::cout<<"nuk eshhte radha previous state"<<previous_state[0]<<" "<<previous_state[1]<<std::endl;
-		std::cout<<"nuk eshhte radha previous current state"<<previous_current[0]<<" "<<previous_current[1]<<std::endl;
+		std::cout<<"fillim episodi previous state"<<previous_state[0]<<" "<<previous_state[1]<<std::endl;
+		std::cout<<"fillim episodi previous current state"<<previous_current[0]<<" "<<previous_current[1]<<std::endl;
 
 		return;
 	}
@@ -167,50 +167,49 @@ void CObstacleAvoidance::ControlStep() {
 			previous_state[1] = previous_current[1];
 			previous_current[0] = current_state[0];
 			previous_current[1] = current_state[1];
-			std::cout<<"eshhte radha previous state"<<previous_state[0]<<" "<<previous_state[1]<<std::endl;
-			std::cout<<"eshhte radha previous current state"<<previous_current[0]<<" "<<previous_current[1]<<std::endl;
+			std::cout<<"nuk eshte radha previous state"<<previous_state[0]<<" "<<previous_state[1]<<std::endl;
+			std::cout<<"nuk eshte previous current state"<<previous_current[0]<<" "<<previous_current[1]<<std::endl;
 
 		}
 		else//radha e tij, do zgjedhe veprimin
 		{
 			double previous_state1[2];
-			    GetPreviousState(previous_state1);
-			    //std::cout<<"previous ne controller"<<previous_state1[0]<<" "<<previous_state1[1]<<std::endl;
+			GetPreviousState(previous_state1);
+			//std::cout<<"previous ne controller"<<previous_state1[0]<<" "<<previous_state1[1]<<std::endl;
 
-			    double state[4];
-			    state[0] = previous_state1[0];
-			    state[1] = previous_state1[1];
-			    state[2] = previous_current[0];
-			    state[3] = previous_current[1];
+			//double state[4];
+			//state[0] = previous_state1[0];
+			//state[1] = previous_state1[1];
+			//state[2] = previous_current[0];
+			//state[3] = previous_current[1];
 
-
-			    //std::cout<<"exec f2"<<std::endl;
-			    int action = otnn->callMethodAct(state,4);
-			    last_action = action;
-
-			    //0 majtas
-			    //1 djathtas
-			    //2 drejt
-			    //4 no action
-
-			    if(action == 0)
-			    	m_pcWheels->SetLinearVelocity(0, m_fWheelVelocity);
-			    else if(action == 1)
-			    	m_pcWheels->SetLinearVelocity(m_fWheelVelocity, 0);
-			    else if(action == 2)
-			    	m_pcWheels->SetLinearVelocity(m_fWheelVelocity, m_fWheelVelocity);
-			    else m_pcWheels->SetLinearVelocity(0, 0);
-
-			   numberOfSteps ++;
+			double state[2];
+			state[0] = current_state[0];
+			state[1] = current_state[1];
+			std::cout<<"eshte radha current state"<<state[0]<<" "<<state[1]<<std::endl;
 
 
+			//std::cout<<"exec f2"<<std::endl;
+			int action = otnn->callMethodAct(state,2);
 
+			last_action = action;
+
+			//0 majtas
+			//1 djathtas
+			//2 drejt
+			//4 no action
+
+			if(action == 0)
+				m_pcWheels->SetLinearVelocity(0, m_fWheelVelocity);
+			else if(action == 1)
+				m_pcWheels->SetLinearVelocity(m_fWheelVelocity, 0);
+			else if(action == 2)
+				m_pcWheels->SetLinearVelocity(m_fWheelVelocity, m_fWheelVelocity);
+			else m_pcWheels->SetLinearVelocity(0, 0);
+
+		    numberOfSteps ++;
 		}
-
 	}
-
-
-
 }
 
 void CObstacleAvoidance::Reset() {
@@ -435,7 +434,7 @@ int CObstacleAvoidance::GetReward()
 
 void CObstacleAvoidance::Remember(double current_state[], int action, double new_state[], int reward, bool done)
 {
-   otnn->callMethodRemember(current_state,action,reward,new_state,done,4);
+   otnn->callMethodRemember(current_state,action,reward,new_state,done,2);
 }
 
 void CObstacleAvoidance::WriteToFile(int episodeLength[], int dimension)

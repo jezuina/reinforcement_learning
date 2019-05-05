@@ -10,7 +10,7 @@ from collections import deque
 
 class OTNeuralNetwork:
     def __init__(self):
-	self.state_dimension=2
+	self.state_dimension=4
 	self.action_space=4
         self.memory  = deque(maxlen=2000)
         #importojme te dhenat e memorjes
@@ -18,7 +18,7 @@ class OTNeuralNetwork:
 	self.memory = pickle.load(filehandler)
         self.gamma = 0.85
 	#ishte 50
-        self.epsilon = 0.1
+        self.epsilon = 0.01
         self.epsilon_min = 0.01
         self.epsilon_decay = 0.995
         self.learning_rate = 0.08
@@ -30,7 +30,7 @@ class OTNeuralNetwork:
     def create_model(self):
         try:	
 	    model   = Sequential()
-            model.add(Dense(12, input_dim=2, activation="relu"))
+            model.add(Dense(12, input_dim=4, activation="relu"))
             model.add(Dense(24, activation="relu"))
 	    #model.add(Dense(48, activation="relu"))
             model.add(Dense(12, activation="relu"))
@@ -46,7 +46,7 @@ class OTNeuralNetwork:
     def create_target_model(self):
         try:	
 	    model   = Sequential()
-            model.add(Dense(12, input_dim=2, activation="relu"))
+            model.add(Dense(12, input_dim=4, activation="relu"))
             model.add(Dense(24, activation="relu"))
 	    #model.add(Dense(48, activation="relu"))
             model.add(Dense(12, activation="relu"))
@@ -61,9 +61,9 @@ class OTNeuralNetwork:
 	    print e
     def act(self, state):
         state=np.array(state)
-	state=state.reshape(1,2)
-	print "state act"
-	print state
+	state=state.reshape(1,4)
+	#print "state"
+	#print state
         #return 3
         self.epsilon *= self.epsilon_decay
 	#print "epsilon"
@@ -85,9 +85,9 @@ class OTNeuralNetwork:
         return maxn
 
     def remember(self, state, action, reward, newState, done):
-	#print "state remember"
+	#print "state"
 	#print state
-	#print "new state remember"
+	#print "new state"
 	#print newState
         self.memory.append([state,action,reward, newState, done])
 	#for a in self.memory:
@@ -110,9 +110,9 @@ class OTNeuralNetwork:
 	    	#print "statee"
 	    	#print state
             	state=np.array(state)
-	    	state=state.reshape(1,2)
+	    	state=state.reshape(1,4)
 	    	new_state=np.array(new_state)
-	    	new_state=new_state.reshape(1,2)
+	    	new_state=new_state.reshape(1,4)
 	    	#print state
 	    	#print "new state"
 	    	#print new_state
